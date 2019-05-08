@@ -1,8 +1,8 @@
 import App from "../components/App";
-import PostList from "../components/PostList";
+import OrganisationsList from "../components/OrganisationsList";
 
 export default () => (
   <App>
-    <PostList />
+    <OrganisationsList />
   </App>
 );
