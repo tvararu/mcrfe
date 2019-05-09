@@ -1,8 +1,7 @@
-import App from "../components/App";
 import OrganisationsList from "../components/OrganisationsList";
 
 export default () => (
-  <App>
+  <div>
     <OrganisationsList />
-  </App>
+  </div>
 );

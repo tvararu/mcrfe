@@ -1,6 +1,5 @@
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
-import ErrorMessage from "./ErrorMessage";
 
 export const allOrganisationsQuery = gql`
   query allOrganisations($first: Int!) {
@@ -21,8 +20,7 @@ export default function Organisations() {
   return (
     <Query query={allOrganisationsQuery} variables={allOrganisationsQueryVars}>
       {({ loading, error, data: { allOrganisations } }) => {
-        if (error)
-          return <ErrorMessage message="Error loading Organisations." />;
+        if (error) return <aside>Error loading Organisations.</aside>;
         if (loading) return <div>Loading</div>;
 
         return (
