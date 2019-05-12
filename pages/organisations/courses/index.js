@@ -1,0 +1,314 @@
+import { Query } from "react-apollo";
+import gql from "graphql-tag";
+import Link from "next/link";
+import GovukMain from "../../../components/GovukMain";
+import GovukBreadcrumbs from "../../../components/GovukBreadcrumbs";
+
+const allProvidersQuery = gql`
+  query allProviders($providerCode: String!) {
+    allProviders(condition: { providerCode: $providerCode }) {
+      nodes {
+        providerName
+        coursesByProviderId(orderBy: COURSE_CODE_ASC) {
+          nodes {
+            courseCode
+            providerByAccreditingProviderId {
+              providerName
+            }
+            name
+            courseSitesByCourseId {
+              nodes {
+                publish
+                status
+                applicationsAcceptedFrom
+                vacStatus
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+const PhaseTag = ({ course }) => {
+  const status = "published";
+  return null; // TODO
+  return (
+    <>
+      <style jsx>{`
+        .phase-tag--small {
+          padding: 4px 8px 1px;
+        }
+
+        .phase-tag--no-content {
+          background: #ffffff;
+          color: #6f777b;
+          border: 2px solid #899094;
+          margin-top: -1px;
+          margin-bottom: -1px;
+        }
+
+        .phase-tag--not-running {
+          background: #dee0e2;
+          color: #0b0c0c;
+          margin-top: -1px;
+          margin-bottom: -1px;
+        }
+
+        .phase-tag--draft {
+          background: #f47738;
+        }
+
+        .phase-tag--published {
+          background: #00823b;
+        }
+      `}</style>
+      <div className={`govuk-tag phase-tag--small phase-tag--${status}`}>
+        Published
+      </div>
+    </>
+  );
+};
+
+const TableHeader = () => (
+  <thead className="govuk-table__head">
+    <style jsx>{`
+      abbr {
+        text-decoration: underline dotted;
+      }
+
+      .w-33 {
+        width: 33%;
+      }
+    `}</style>
+    <tr className="govuk-table__row">
+      <th className="govuk-table__header w-33">Course</th>
+      <th className="govuk-table__header">UCAS Status</th>
+      <th className="govuk-table__header">Content</th>
+      <th className="govuk-table__header">
+        Is it on <abbr title="Find postgraduate teacher training">Find</abbr>?
+      </th>
+      <th className="govuk-table__header">Applications</th>
+      <th className="govuk-table__header">Vacancies</th>
+    </tr>
+  </thead>
+);
+
+const siteIsFindable = ({ publish, status }) =>
+  publish === "Y" && status === "R";
+
+const courseIsFindable = course =>
+  course.courseSitesByCourseId.nodes.some(siteIsFindable);
+
+const courseIsNew = course =>
+  course.courseSitesByCourseId.nodes.some(({ status }) => status === "N");
+
+const courseUcasStatus = course => {
+  if (courseIsFindable(course)) return "Running";
+  if (courseIsNew(course)) return "New – not yet running";
+
+  return "Not running";
+};
+
+const courseIsRunning = course => courseUcasStatus(course) === "Running";
+
+const siteOpenForApplications = site =>
+  site.applicationsAcceptedFrom &&
+  new Date(site.applicationsAcceptedFrom) < new Date();
+
+const siteHasVacancies = site => site.vacStatus !== "";
+
+const courseOpenForApplications = course =>
+  course.courseSitesByCourseId.nodes
+    .filter(siteIsFindable)
+    .filter(siteOpenForApplications)
+    .some(siteHasVacancies);
+
+const courseHasVacancies = course =>
+  course.courseSitesByCourseId.nodes
+    .filter(siteIsFindable)
+    .some(siteHasVacancies);
+
+const TableRow = ({ providerCode, course }) => (
+  <tr className="govuk-table__row">
+    <td className="govuk-table__cell">
+      <Link
+        as={`/organisations/${providerCode}/courses/${course.courseCode}`}
+        href={`/organisations/courses/show?providerCode=${providerCode}&courseCode=${
+          course.courseCode
+        }`}
+        prefetch
+      >
+        <a className="govuk-link govuk-heading-s govuk-!-margin-bottom-0">
+          {course.name} ({course.courseCode})
+        </a>
+      </Link>
+      <span className="govuk-body-s">QTS full time</span>
+    </td>
+    <td className="govuk-table__cell">{courseUcasStatus(course)}</td>
+    <td className="govuk-table__cell">
+      <PhaseTag course={course} />
+    </td>
+    <td className="govuk-table__cell">
+      {courseIsFindable(course) ? (
+        <a
+          className="govuk-link"
+          href={`https://bat-dev-search-and-compare-ui-app.azurewebsites.net/course/${providerCode}/${
+            course.courseCode
+          }`}
+        >
+          Yes - view online
+        </a>
+      ) : (
+        "No"
+      )}
+    </td>
+    <td className="govuk-table__cell">
+      {courseIsRunning(course)
+        ? courseOpenForApplications(course)
+          ? "Open"
+          : "Closed"
+        : ""}
+    </td>
+    <td className="govuk-table__cell">
+      {courseIsRunning(course) ? (
+        <>
+          {courseHasVacancies(course) ? "Yes" : "No"} (
+          <a
+            className="govuk-link"
+            href={`/organisations/${providerCode}/courses/${
+              course.courseCode
+            }/vacancies`}
+          >
+            Edit
+          </a>
+          )
+        </>
+      ) : (
+        ""
+      )}
+    </td>
+  </tr>
+);
+
+const sortByNameAndCourseCode = (c1, c2) => {
+  const c1str = c1.name + c1.courseCode;
+  const c2str = c2.name + c2.courseCode;
+  return c1str < c2str ? -1 : c1str > c2str ? 1 : 0;
+};
+
+const Table = ({ providerCode, courses }) => (
+  <table className="govuk-table">
+    <TableHeader />
+    <tbody className="govuk-table__body">
+      {courses.sort(sortByNameAndCourseCode).map(course => (
+        <TableRow
+          key={course.courseCode}
+          providerCode={providerCode}
+          course={course}
+        />
+      ))}
+    </tbody>
+  </table>
+);
+
+const Content = ({ providerCode, providerName, courses }) => {
+  const coursesByAccreditingProvider = courses.reduce((cs, course) => {
+    const accreditingProvider = course.providerByAccreditingProviderId;
+    const key = accreditingProvider
+      ? accreditingProvider.providerName
+      : providerName;
+    cs[key] = (cs[key] || []).concat(course);
+    return cs;
+  }, {});
+
+  const selfAccreditedCourses = coursesByAccreditingProvider[providerName];
+  delete coursesByAccreditingProvider[providerName];
+
+  return (
+    <>
+      <p className="govuk-body">Use this section to:</p>
+
+      <ul className="govuk-list govuk-list--bullet govuk-!-margin-bottom-7">
+        <li>write about each course</li>
+        <li>preview and publish courses</li>
+        <li>copy content between courses</li>
+      </ul>
+
+      <section>
+        {selfAccreditedCourses && (
+          <Table providerCode={providerCode} courses={selfAccreditedCourses} />
+        )}
+
+        {Object.keys(coursesByAccreditingProvider)
+          .sort()
+          .map(providerName => (
+            <React.Fragment key={providerName}>
+              <h2 className="govuk-heading-m">
+                <span className="govuk-caption-m">Accredited body</span>
+                {providerName}
+              </h2>
+
+              <Table
+                providerCode={providerCode}
+                courses={coursesByAccreditingProvider[providerName]}
+              />
+            </React.Fragment>
+          ))}
+      </section>
+
+      <a
+        className="govuk-button govuk-!-margin-bottom-2"
+        rel="noopener noreferrer"
+        target="_blank"
+        href="https://docs.google.com/forms/d/e/1FAIpQLSeatJO2ZuqM-fnRJxEo6IIF0hZIU63JGnx0sDXO6Ulax7U_bA/viewform?usp=pp_url&amp;entry.1033530353=tim.abell%2B4%40digital.education.gov.uk&amp;entry.158771972=2C4"
+      >
+        Add a new course
+      </a>
+      <p className="govuk-body-s">
+        You’ll be taken to a Google Form to fill in your course details.
+      </p>
+    </>
+  );
+};
+
+const CoursesPage = ({ providerCode }) => (
+  <Query query={allProvidersQuery} variables={{ providerCode }}>
+    {({ loading, error, data: { allProviders } }) => {
+      if (error) return <p className="govuk-body">Error: {error}</p>;
+      if (loading) return <p className="govuk-body">Loading...</p>;
+
+      const provider = allProviders.nodes[0];
+      const courses = provider.coursesByProviderId.nodes;
+      return (
+        <>
+          <GovukBreadcrumbs
+            crumbs={[
+              { href: "/", text: "Organisations" },
+              {
+                as: `/organisations/${providerCode}`,
+                href: `/organisations?providerCode=${providerCode}`,
+                text: provider.providerName
+              }
+            ]}
+          />
+          <GovukMain>
+            <h1 className="govuk-heading-xl">Courses</h1>
+            <Content
+              providerName={provider.providerName}
+              providerCode={providerCode}
+              courses={courses}
+            />
+          </GovukMain>
+        </>
+      );
+    }}
+  </Query>
+);
+
+CoursesPage.getInitialProps = ({ query: { providerCode } }) => ({
+  providerCode
+});
+
+export default CoursesPage;
