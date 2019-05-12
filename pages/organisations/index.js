@@ -1,5 +1,6 @@
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
+import Link from "next/link";
 import GovukMain from "../../components/GovukMain";
 import GovukBreadcrumbs from "../../components/GovukBreadcrumbs";
 
@@ -62,12 +63,12 @@ const OrganisationsPage = ({ providerCode }) => (
                 </ul>
 
                 <h2 className="govuk-heading-m">
-                  <a
-                    className="govuk-link"
+                  <Link
+                    as={`/organisations/${providerCode}/courses`}
                     href={`/organisations/courses?providerCode=${providerCode}`}
                   >
-                    Courses
-                  </a>
+                    <a className="govuk-link">Courses</a>
+                  </Link>
                 </h2>
                 <p className="govuk-body">Use this section to:</p>
                 <ul className="govuk-list govuk-list--bullet govuk-!-margin-bottom-8">

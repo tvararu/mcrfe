@@ -17,6 +17,12 @@ app
       });
     });
 
+    server.get("/organisations/:providerCode/courses", (req, res) => {
+      app.render(req, res, "/organisations/courses", {
+        providerCode: req.params.providerCode
+      });
+    });
+
     server.get("*", (req, res) => {
       return handle(req, res);
     });
