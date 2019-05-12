@@ -3,7 +3,7 @@ import gql from "graphql-tag";
 import Link from "next/link";
 import GovukMain from "../components/GovukMain";
 
-export const allProvidersQuery = gql`
+const allProvidersQuery = gql`
   {
     allProviders(orderBy: PROVIDER_NAME_ASC) {
       nodes {
@@ -45,9 +45,10 @@ const OrganisationsList = () => (
       if (error) return <p className="govuk-body">Error: {error}</p>;
       if (loading) return <p className="govuk-body">Loading...</p>;
 
+      const providers = allProviders.nodes;
       return (
         <ul className="govuk-list">
-          {allProviders.nodes.map(provider => (
+          {providers.map(provider => (
             <OrganisationListItem key={provider.id} {...provider} />
           ))}
         </ul>
