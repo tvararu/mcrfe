@@ -1,6 +1,7 @@
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
 import Link from "next/link";
+import GovukMain from "../components/GovukMain";
 
 export const allProvidersQuery = gql`
   {
@@ -56,8 +57,8 @@ const OrganisationsList = () => (
 );
 
 export default () => (
-  <>
+  <GovukMain>
     <h1 className="govuk-heading-xl">Organisations</h1>
     <OrganisationsList />
-  </>
+  </GovukMain>
 );

@@ -16,11 +16,9 @@ class MyApp extends App {
         <GovukHeader />
         <div className="govuk-width-container">
           <GovukPhaseBanner />
-          <main className="govuk-main-wrapper" id="main-content" role="main">
-            <ApolloProvider client={apolloClient}>
-              <Component {...pageProps} />
-            </ApolloProvider>
-          </main>
+          <ApolloProvider client={apolloClient}>
+            <Component {...pageProps} />
+          </ApolloProvider>
         </div>
         <GovukFooter />
       </Container>
