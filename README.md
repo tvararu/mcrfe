@@ -1,7 +1,7 @@
 # mcrfe
 
 ```bash
-postgraphile -c manage --enhance-graphiql --cors
+yarn db manage
 yarn dev
 open http://localhost:3000
 ```
