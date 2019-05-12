@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import Link from "next/link";
 
 // Vendored code
 function Header($module) {
@@ -106,12 +107,11 @@ const GovukHeader = () => {
           </a>
         </div>
         <div className="govuk-header__content">
-          <a
-            className="govuk-header__link govuk-header__link--service-name"
-            href="/"
-          >
-            Publish teacher training courses
-          </a>
+          <Link href="/" prefetch>
+            <a className="govuk-header__link govuk-header__link--service-name">
+              Publish teacher training courses
+            </a>
+          </Link>
           <button
             type="button"
             role="button"

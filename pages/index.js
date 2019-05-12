@@ -1,5 +1,6 @@
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
+import Link from "next/link";
 
 export const allProvidersQuery = gql`
   {
@@ -17,16 +18,19 @@ export const allProvidersQuery = gql`
 `;
 
 const OrganisationListItem = ({
-  id,
   providerCode: code,
   providerName: name,
   coursesByProviderId: { totalCount: courseCount }
 }) => (
-  <li key={id}>
+  <li>
     <h2 className="govuk-heading-m">
-      <a className="govuk-link" href={`/organisations/${code}`}>
-        {name}
-      </a>
+      <Link
+        as={`/organisations/${code}`}
+        href={`/organisations?providerCode=${code}`}
+        prefetch
+      >
+        <a className="govuk-link">{name}</a>
+      </Link>
       <span className="govuk-body govuk-!-font-weight-regular govuk-!-display-block">
         {courseCount} course{courseCount !== 1 && "s"}
       </span>
@@ -37,17 +41,15 @@ const OrganisationListItem = ({
 const OrganisationsList = () => (
   <Query query={allProvidersQuery}>
     {({ loading, error, data: { allProviders } }) => {
-      if (error) return <aside>Error loading Organisations.</aside>;
-      if (loading) return <div>Loading</div>;
+      if (error) return <p className="govuk-body">Error: {error}</p>;
+      if (loading) return <p className="govuk-body">Loading...</p>;
 
       return (
-        <section>
-          <ul className="govuk-list">
-            {allProviders.nodes.map(provider => (
-              <OrganisationListItem {...provider} />
-            ))}
-          </ul>
-        </section>
+        <ul className="govuk-list">
+          {allProviders.nodes.map(provider => (
+            <OrganisationListItem key={provider.id} {...provider} />
+          ))}
+        </ul>
       );
     }}
   </Query>
