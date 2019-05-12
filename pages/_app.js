@@ -5,7 +5,7 @@ import GovukHeader from "../components/GovukHeader";
 import GovukPhaseBanner from "../components/GovukPhaseBanner";
 import GovukSkipLink from "../components/GovukSkipLink";
 import withApolloClient from "../lib/with-apollo-client";
-import "../lib/main.scss";
+import "../lib/govuk-frontend.scss";
 
 class MyApp extends App {
   render() {
