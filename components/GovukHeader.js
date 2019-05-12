@@ -65,16 +65,16 @@ Header.prototype.handleClick = function(event) {
 // End vendored code
 
 const GovukHeader = () => {
-  const $headerEl = useRef();
+  const headerRef = useRef();
   useEffect(() => {
-    new Header($headerEl.current).init();
+    new Header(headerRef.current).init();
   }, []);
   return (
     <header
       className="govuk-header"
       role="banner"
       data-module="header"
-      ref={$headerEl}
+      ref={headerRef}
     >
       <div className="govuk-header__container govuk-width-container">
         <div className="govuk-header__logo">
