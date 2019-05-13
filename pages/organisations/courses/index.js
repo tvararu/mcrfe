@@ -31,43 +31,105 @@ const allProvidersQuery = gql`
   }
 `;
 
-const PhaseTag = ({ course }) => {
-  const status = "published";
-  return null; // TODO
+const allCourseEnrichmentsQuery = gql`
+  query allCourseEnrichments($providerCode: String!, $ucasCourseCode: String!) {
+    allCourseEnrichments(
+      condition: {
+        providerCode: $providerCode
+        ucasCourseCode: $ucasCourseCode
+      }
+      orderBy: CREATED_AT_DESC
+      first: 1
+    ) {
+      nodes {
+        lastPublishedTimestampUtc
+        status
+      }
+    }
+  }
+`;
+
+const enrichmentContentStatusCss = enrichment => {
+  if (!enrichment) return "no-content";
+  if (enrichment.status === 1 || enrichment.lastPublishedTimestampUtc)
+    return "published";
+  return "draft";
+};
+
+const enrichmentHasUnpublishedChanges = enrichment => {
   return (
-    <>
-      <style jsx>{`
-        .phase-tag--small {
-          padding: 4px 8px 1px;
-        }
+    enrichment &&
+    enrichment.status === 0 &&
+    enrichment.lastPublishedTimestampUtc
+  );
+};
 
-        .phase-tag--no-content {
-          background: #ffffff;
-          color: #6f777b;
-          border: 2px solid #899094;
-          margin-top: -1px;
-          margin-bottom: -1px;
-        }
+const enrichmentContentStatusContent = enrichment => {
+  if (!enrichment) return "Empty";
+  if (enrichment.status === 1) return "Published";
+  if (enrichment.status === 0 && enrichment.lastPublishedTimestampUtc)
+    return <>Published&nbsp;*</>;
+  return "Draft";
+};
 
-        .phase-tag--not-running {
-          background: #dee0e2;
-          color: #0b0c0c;
-          margin-top: -1px;
-          margin-bottom: -1px;
-        }
+const PhaseTag = ({ providerCode, course }) => {
+  const status = "published";
+  return (
+    <Query
+      query={allCourseEnrichmentsQuery}
+      variables={{ providerCode, ucasCourseCode: course.courseCode }}
+    >
+      {({ loading, error, data: { allCourseEnrichments } }) => {
+        if (error) return "Error loading.";
+        if (loading) return "Loading...";
 
-        .phase-tag--draft {
-          background: #f47738;
-        }
+        const enrichment = allCourseEnrichments.nodes[0];
+        return (
+          <>
+            <style jsx>{`
+              .phase-tag--small {
+                padding: 4px 8px 1px;
+              }
 
-        .phase-tag--published {
-          background: #00823b;
-        }
-      `}</style>
-      <div className={`govuk-tag phase-tag--small phase-tag--${status}`}>
-        Published
-      </div>
-    </>
+              .phase-tag--no-content {
+                background: #ffffff;
+                color: #6f777b;
+                border: 2px solid #899094;
+                margin-top: -1px;
+                margin-bottom: -1px;
+              }
+
+              .phase-tag--not-running {
+                background: #dee0e2;
+                color: #0b0c0c;
+                margin-top: -1px;
+                margin-bottom: -1px;
+              }
+
+              .phase-tag--draft {
+                background: #f47738;
+              }
+
+              .phase-tag--published {
+                background: #00823b;
+              }
+            `}</style>
+            <div
+              className={`govuk-tag phase-tag--small phase-tag--${enrichmentContentStatusCss(
+                enrichment
+              )}`}
+            >
+              {enrichmentContentStatusContent(enrichment)}
+            </div>
+            {enrichmentHasUnpublishedChanges(enrichment) && (
+              <div className="govuk-body govuk-body-s govuk-!-margin-bottom-0 govuk-!-margin-top-1">
+                *&nbsp;Unpublished&nbsp;changes
+              </div>
+            )}
+          </>
+        );
+      }}
+    </Query>
   );
 };
 
@@ -148,7 +210,9 @@ const TableRow = ({ providerCode, course }) => (
     </td>
     <td className="govuk-table__cell">{courseUcasStatus(course)}</td>
     <td className="govuk-table__cell">
-      <PhaseTag course={course} />
+      {courseIsRunning(course) && (
+        <PhaseTag course={course} providerCode={providerCode} />
+      )}
     </td>
     <td className="govuk-table__cell">
       {courseIsFindable(course) ? (
