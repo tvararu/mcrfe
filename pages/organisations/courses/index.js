@@ -286,7 +286,11 @@ const Content = ({ providerCode, providerName, courses, enrichments }) => {
 
       <section>
         {selfAccreditedCourses && (
-          <Table providerCode={providerCode} courses={selfAccreditedCourses} />
+          <Table
+            providerCode={providerCode}
+            courses={selfAccreditedCourses}
+            enrichments={enrichments}
+          />
         )}
 
         {Object.keys(coursesByAccreditingProvider)
