@@ -261,6 +261,22 @@ const Table = ({ providerCode, courses, enrichments }) => (
   </table>
 );
 
+const AddNewCourse = ({ top = false }) => (
+  <>
+    <a
+      className="govuk-button govuk-!-margin-bottom-2"
+      rel="noopener noreferrer"
+      target="_blank"
+      href="https://docs.google.com/forms/d/e/1FAIpQLSeatJO2ZuqM-fnRJxEo6IIF0hZIU63JGnx0sDXO6Ulax7U_bA/viewform?usp=pp_url&amp;entry.1033530353=tim.abell%2B4%40digital.education.gov.uk&amp;entry.158771972=2C4"
+    >
+      Add a new course
+    </a>
+    <p className={`govuk-body-s${top ? " govuk-!-margin-bottom-6" : ""} `}>
+      You’ll be taken to a Google Form to fill in your course details.
+    </p>
+  </>
+);
+
 const Content = ({ providerCode, providerName, courses, enrichments }) => {
   const coursesByAccreditingProvider = courses.reduce((cs, course) => {
     const accreditingProvider = course.providerByAccreditingProviderId;
@@ -283,6 +299,8 @@ const Content = ({ providerCode, providerName, courses, enrichments }) => {
         <li>preview and publish courses</li>
         <li>copy content between courses</li>
       </ul>
+
+      {courses.length > 10 && <AddNewCourse top />}
 
       <section>
         {selfAccreditedCourses && (
@@ -311,17 +329,7 @@ const Content = ({ providerCode, providerName, courses, enrichments }) => {
           ))}
       </section>
 
-      <a
-        className="govuk-button govuk-!-margin-bottom-2"
-        rel="noopener noreferrer"
-        target="_blank"
-        href="https://docs.google.com/forms/d/e/1FAIpQLSeatJO2ZuqM-fnRJxEo6IIF0hZIU63JGnx0sDXO6Ulax7U_bA/viewform?usp=pp_url&amp;entry.1033530353=tim.abell%2B4%40digital.education.gov.uk&amp;entry.158771972=2C4"
-      >
-        Add a new course
-      </a>
-      <p className="govuk-body-s">
-        You’ll be taken to a Google Form to fill in your course details.
-      </p>
+      <AddNewCourse />
     </>
   );
 };
