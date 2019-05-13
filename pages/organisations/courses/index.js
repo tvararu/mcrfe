@@ -28,22 +28,15 @@ const allProvidersQuery = gql`
         }
       }
     }
-  }
-`;
-
-const allCourseEnrichmentsQuery = gql`
-  query allCourseEnrichments($providerCode: String!, $ucasCourseCode: String!) {
     allCourseEnrichments(
-      condition: {
-        providerCode: $providerCode
-        ucasCourseCode: $ucasCourseCode
-      }
+      condition: { providerCode: $providerCode }
       orderBy: CREATED_AT_DESC
-      first: 1
     ) {
       nodes {
         lastPublishedTimestampUtc
         status
+
+        ucasCourseCode
       }
     }
   }
@@ -72,64 +65,52 @@ const enrichmentContentStatusContent = enrichment => {
   return "Draft";
 };
 
-const PhaseTag = ({ providerCode, course }) => {
+const PhaseTag = ({ course, latestEnrichment }) => {
   const status = "published";
+  const enrichment = latestEnrichment;
   return (
-    <Query
-      query={allCourseEnrichmentsQuery}
-      variables={{ providerCode, ucasCourseCode: course.courseCode }}
-    >
-      {({ loading, error, data: { allCourseEnrichments } }) => {
-        if (error) return "Error loading.";
-        if (loading) return "Loading...";
+    <>
+      <style jsx>{`
+        .phase-tag--small {
+          padding: 4px 8px 1px;
+        }
 
-        const enrichment = allCourseEnrichments.nodes[0];
-        return (
-          <>
-            <style jsx>{`
-              .phase-tag--small {
-                padding: 4px 8px 1px;
-              }
+        .phase-tag--no-content {
+          background: #ffffff;
+          color: #6f777b;
+          border: 2px solid #899094;
+          margin-top: -1px;
+          margin-bottom: -1px;
+        }
 
-              .phase-tag--no-content {
-                background: #ffffff;
-                color: #6f777b;
-                border: 2px solid #899094;
-                margin-top: -1px;
-                margin-bottom: -1px;
-              }
+        .phase-tag--not-running {
+          background: #dee0e2;
+          color: #0b0c0c;
+          margin-top: -1px;
+          margin-bottom: -1px;
+        }
 
-              .phase-tag--not-running {
-                background: #dee0e2;
-                color: #0b0c0c;
-                margin-top: -1px;
-                margin-bottom: -1px;
-              }
+        .phase-tag--draft {
+          background: #f47738;
+        }
 
-              .phase-tag--draft {
-                background: #f47738;
-              }
-
-              .phase-tag--published {
-                background: #00823b;
-              }
-            `}</style>
-            <div
-              className={`govuk-tag phase-tag--small phase-tag--${enrichmentContentStatusCss(
-                enrichment
-              )}`}
-            >
-              {enrichmentContentStatusContent(enrichment)}
-            </div>
-            {enrichmentHasUnpublishedChanges(enrichment) && (
-              <div className="govuk-body govuk-body-s govuk-!-margin-bottom-0 govuk-!-margin-top-1">
-                *&nbsp;Unpublished&nbsp;changes
-              </div>
-            )}
-          </>
-        );
-      }}
-    </Query>
+        .phase-tag--published {
+          background: #00823b;
+        }
+      `}</style>
+      <div
+        className={`govuk-tag phase-tag--small phase-tag--${enrichmentContentStatusCss(
+          enrichment
+        )}`}
+      >
+        {enrichmentContentStatusContent(enrichment)}
+      </div>
+      {enrichmentHasUnpublishedChanges(enrichment) && (
+        <div className="govuk-body govuk-body-s govuk-!-margin-bottom-0 govuk-!-margin-top-1">
+          *&nbsp;Unpublished&nbsp;changes
+        </div>
+      )}
+    </>
   );
 };
 
@@ -192,7 +173,7 @@ const courseHasVacancies = course =>
     .filter(siteIsFindable)
     .some(siteHasVacancies);
 
-const TableRow = ({ providerCode, course }) => (
+const TableRow = ({ providerCode, course, latestEnrichment }) => (
   <tr className="govuk-table__row">
     <td className="govuk-table__cell">
       <Link
@@ -211,7 +192,7 @@ const TableRow = ({ providerCode, course }) => (
     <td className="govuk-table__cell">{courseUcasStatus(course)}</td>
     <td className="govuk-table__cell">
       {courseIsRunning(course) && (
-        <PhaseTag course={course} providerCode={providerCode} />
+        <PhaseTag course={course} latestEnrichment={latestEnrichment} />
       )}
     </td>
     <td className="govuk-table__cell">
@@ -262,7 +243,7 @@ const sortByNameAndCourseCode = (c1, c2) => {
   return c1str < c2str ? -1 : c1str > c2str ? 1 : 0;
 };
 
-const Table = ({ providerCode, courses }) => (
+const Table = ({ providerCode, courses, enrichments }) => (
   <table className="govuk-table">
     <TableHeader />
     <tbody className="govuk-table__body">
@@ -271,13 +252,16 @@ const Table = ({ providerCode, courses }) => (
           key={course.courseCode}
           providerCode={providerCode}
           course={course}
+          latestEnrichment={enrichments.find(
+            ({ ucasCourseCode }) => ucasCourseCode === course.courseCode
+          )}
         />
       ))}
     </tbody>
   </table>
 );
 
-const Content = ({ providerCode, providerName, courses }) => {
+const Content = ({ providerCode, providerName, courses, enrichments }) => {
   const coursesByAccreditingProvider = courses.reduce((cs, course) => {
     const accreditingProvider = course.providerByAccreditingProviderId;
     const key = accreditingProvider
@@ -317,6 +301,7 @@ const Content = ({ providerCode, providerName, courses }) => {
               <Table
                 providerCode={providerCode}
                 courses={coursesByAccreditingProvider[providerName]}
+                enrichments={enrichments}
               />
             </React.Fragment>
           ))}
@@ -339,7 +324,7 @@ const Content = ({ providerCode, providerName, courses }) => {
 
 const CoursesPage = ({ providerCode }) => (
   <Query query={allProvidersQuery} variables={{ providerCode }}>
-    {({ loading, error, data: { allProviders } }) => {
+    {({ loading, error, data: { allProviders, allCourseEnrichments } }) => {
       if (error) return <p className="govuk-body">Error: {error}</p>;
       if (loading) return <p className="govuk-body">Loading...</p>;
 
@@ -363,6 +348,7 @@ const CoursesPage = ({ providerCode }) => (
               providerName={provider.providerName}
               providerCode={providerCode}
               courses={courses}
+              enrichments={allCourseEnrichments.nodes}
             />
           </GovukMain>
         </>
