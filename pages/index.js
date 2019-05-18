@@ -42,7 +42,7 @@ const OrganisationListItem = ({
 const OrganisationsList = () => (
   <Query query={allProvidersQuery}>
     {({ loading, error, data }) => {
-      if (error) return <p className="govuk-body">Error: {error}</p>;
+      if (error) return <pre>Error: {JSON.stringify(error, null, 2)}</pre>;
       if (loading) return <p className="govuk-body">Loading...</p>;
 
       const providers = data.allProviders.nodes;

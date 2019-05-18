@@ -337,7 +337,7 @@ const Content = ({ providerCode, providerName, courses, enrichments }) => {
 const CoursesPage = ({ providerCode }) => (
   <Query query={allProvidersQuery} variables={{ providerCode }}>
     {({ loading, error, data }) => {
-      if (error) return <p className="govuk-body">Error: {error}</p>;
+      if (error) return <pre>Error: {JSON.stringify(error, null, 2)}</pre>;
       if (loading) return <p className="govuk-body">Loading...</p>;
 
       const provider = data.allProviders.nodes[0];
