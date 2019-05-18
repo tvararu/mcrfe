@@ -1,11 +1,18 @@
 # mcrfe
 
-Run in development:
+Run the server (see [`server/README.md`](server/README.md)).
+
+Run the frontend:
 
 ```bash
-yarn db manage
-yarn dev
+now dev
 open http://localhost:3000
+```
+
+Deploy:
+
+```bash
+now
 ```
 
 Analyze the client-side JS bundle:
