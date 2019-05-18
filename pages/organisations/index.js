@@ -102,11 +102,11 @@ const Content = ({ providerCode }) => (
 
 const OrganisationsPage = ({ providerCode }) => (
   <Query query={allProvidersQuery} variables={{ providerCode }}>
-    {({ loading, error, data: { allProviders } }) => {
+    {({ loading, error, data }) => {
       if (error) return <p className="govuk-body">Error: {error}</p>;
       if (loading) return <p className="govuk-body">Loading...</p>;
 
-      const { providerName } = allProviders.nodes[0];
+      const { providerName } = data.allProviders.nodes[0];
       return (
         <>
           <GovukBreadcrumbs

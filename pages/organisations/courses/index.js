@@ -336,11 +336,11 @@ const Content = ({ providerCode, providerName, courses, enrichments }) => {
 
 const CoursesPage = ({ providerCode }) => (
   <Query query={allProvidersQuery} variables={{ providerCode }}>
-    {({ loading, error, data: { allProviders, allCourseEnrichments } }) => {
+    {({ loading, error, data }) => {
       if (error) return <p className="govuk-body">Error: {error}</p>;
       if (loading) return <p className="govuk-body">Loading...</p>;
 
-      const provider = allProviders.nodes[0];
+      const provider = data.allProviders.nodes[0];
       const courses = provider.coursesByProviderId.nodes;
       return (
         <>
@@ -360,7 +360,7 @@ const CoursesPage = ({ providerCode }) => (
               providerName={provider.providerName}
               providerCode={providerCode}
               courses={courses}
-              enrichments={allCourseEnrichments.nodes}
+              enrichments={data.allCourseEnrichments.nodes}
             />
           </GovukMain>
         </>

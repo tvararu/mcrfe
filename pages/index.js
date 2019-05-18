@@ -41,11 +41,11 @@ const OrganisationListItem = ({
 
 const OrganisationsList = () => (
   <Query query={allProvidersQuery}>
-    {({ loading, error, data: { allProviders } }) => {
+    {({ loading, error, data }) => {
       if (error) return <p className="govuk-body">Error: {error}</p>;
       if (loading) return <p className="govuk-body">Loading...</p>;
 
-      const providers = allProviders.nodes;
+      const providers = data.allProviders.nodes;
       return (
         <ul className="govuk-list">
           {providers.map(provider => (
