@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "Manage Courses React Frontend, for prototyping",
   "scripts": {
-    "dev": "node server.js",
+    "dev": "next dev",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js",
+    "start": "next",
     "now-build": "next build"
   },
   "author": "theo@vararu.org",
@@ -13,7 +13,6 @@
   "repository": "https://github.com/tvararu/mcrfe",
   "dependencies": {
     "apollo-boost": "^0.1.16",
-    "express": "^4.16.4",
     "govuk-frontend": "^2.11.0",
     "graphql": "^14.0.2",
     "isomorphic-unfetch": "^3.0.0",
