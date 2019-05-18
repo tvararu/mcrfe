@@ -1,13 +1,16 @@
 {
-  "name": "with-apollo",
-  "version": "2.0.0",
+  "name": "mcrfe",
+  "version": "1.0.0",
+  "description": "Manage Courses React Frontend, for prototyping",
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
-    "db": "postgraphile --cors --enhance-graphiql -c",
     "now-build": "next build"
   },
+  "author": "theo@vararu.org",
+  "license": "MIT",
+  "repository": "https://github.com/tvararu/mcrfe",
   "dependencies": {
     "apollo-boost": "^0.1.16",
     "express": "^4.16.4",
@@ -19,13 +22,10 @@
     "react-apollo": "^2.1.11",
     "react-dom": "^16.8.6"
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "@zeit/next-bundle-analyzer": "^0.1.2",
     "@zeit/next-sass": "^1.0.1",
     "copy-webpack-plugin": "^5.0.3",
-    "node-sass": "^4.12.0",
-    "postgraphile": "^4.4.0"
+    "node-sass": "^4.12.0"
   }
 }
