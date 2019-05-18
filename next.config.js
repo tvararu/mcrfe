@@ -28,6 +28,10 @@ module.exports = withBundleAnalyzer(
         analyzerMode: "static",
         reportFilename: "../bundles/client.html"
       }
+    },
+    env: {
+      AUTH: process.env.AUTH,
+      API_URL: process.env.API_URL
     }
   })
 );
