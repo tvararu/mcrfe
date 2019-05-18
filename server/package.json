@@ -1,0 +1,20 @@
+{
+  "name": "manage-courses-gql",
+  "version": "1.0.0",
+  "description": "A graphql API server for manage-courses",
+  "engines": {
+    "node": "10.15.3"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "theo@vararu.org",
+  "license": "MIT",
+  "repository": "https://github.com/tvararu/mcrfe",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.0",
+    "express-basic-auth": "^1.2.0",
+    "postgraphile": "^4.4.0"
+  }
+}

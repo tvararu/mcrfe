@@ -1,0 +1,8 @@
+applications:
+  - name: manage-courses-gql
+    command: yarn start
+    memory: 512M
+    buildpacks:
+      - nodejs_buildpack
+    services:
+      - manage-courses-psql
