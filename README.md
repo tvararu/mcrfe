@@ -2,7 +2,7 @@
 
 Run the server (see [`server/README.md`](server/README.md)).
 
-Run the frontend:
+Run the frontend locally (basic auth: `local:local`):
 
 ```bash
 now dev
