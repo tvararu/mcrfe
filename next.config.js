@@ -32,6 +32,7 @@ module.exports = withBundleAnalyzer(
     env: {
       AUTH: process.env.AUTH,
       API_URL: process.env.API_URL
-    }
+    },
+    target: "serverless"
   })
 );

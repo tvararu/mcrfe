@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "name": "mcrfe",
+  "builds": [{ "src": "next.config.js", "use": "@now/next" }],
+  "build": {
+    "env": {
+      "AUTH": "@auth",
+      "API_URL": "@api_url"
+    }
+  },
+  "routes": [
+    {
+      "src": "/organisations/(?<code>[^/]+)",
+      "dest": "/organisations?providerCode=$code"
+    },
+    {
+      "src": "/organisations/(?<code>[^/]+)/courses",
+      "dest": "/organisations/courses?providerCode=$code"
+    }
+  ]
+}
