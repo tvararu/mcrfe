@@ -24,6 +24,7 @@
   "devDependencies": {
     "@zeit/next-bundle-analyzer": "^0.1.2",
     "@zeit/next-sass": "^1.0.1",
+    "cypress": "^3.3.0",
     "node-sass": "^4.12.0"
   }
 }
