@@ -10,12 +10,12 @@
   },
   "routes": [
     {
-      "src": "/organisations/(?<code>[^/]+)",
-      "dest": "/organisations?providerCode=$code"
+      "src": "/organisations/(?<providerCode>[^/]*)",
+      "dest": "/organisations?providerCode=$providerCode"
     },
     {
-      "src": "/organisations/(?<code>[^/]+)/courses",
-      "dest": "/organisations/courses?providerCode=$code"
+      "src": "/organisations/(?<providerCode>[^/]*)/courses",
+      "dest": "/organisations/courses?providerCode=$providerCode"
     }
   ]
 }
