@@ -20,9 +20,7 @@ describe("Basic tests", () => {
     });
 
     it("Organisation page", () => {
-      cy.visit("/organisations?providerCode=T92", {
-        auth
-      });
+      cy.visit("/organisations/T92", { auth });
 
       cy.contains(schoolName).should("exist");
       cy.contains("Courses").should("exist");
@@ -34,9 +32,7 @@ describe("Basic tests", () => {
     });
 
     it("Courses page", () => {
-      cy.visit("/organisations/courses?providerCode=T92", {
-        auth
-      });
+      cy.visit("/organisations/T92/courses", { auth });
 
       cy.contains("Courses").should("exist");
       cy.contains("Primary (X130)").should("exist");
@@ -62,9 +58,7 @@ describe("Basic tests", () => {
     });
 
     it("Organisation to Courses", () => {
-      cy.visit("/organisations?providerCode=T92", {
-        auth
-      });
+      cy.visit("/organisations/T92", { auth });
 
       cy.contains("Courses").click();
 
