@@ -19,7 +19,7 @@ app.use(cors());
 if (AUTH) {
   app.use(
     basicAuth({
-      users: { graphql: AUTH },
+      users: JSON.parse(AUTH),
       challenge: true,
       unauthorizedResponse: () => JSON.stringify({ error: "Access denied" })
     })
