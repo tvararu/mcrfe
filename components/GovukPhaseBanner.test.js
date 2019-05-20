@@ -1,9 +1,9 @@
 import renderer from "react-test-renderer";
-import GovukFooter from "./GovukFooter";
+import GovukPhaseBanner from "./GovukPhaseBanner";
 
-describe("GovukFooter", () => {
+describe("GovukPhaseBanner", () => {
   it("renders correctly", () => {
-    const component = renderer.create(<GovukFooter />);
+    const component = renderer.create(<GovukPhaseBanner />);
     const tree = component.toJSON();
 
     expect(tree).toMatchSnapshot();

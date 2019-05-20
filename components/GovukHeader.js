@@ -64,7 +64,7 @@ Header.prototype.handleClick = function(event) {
 };
 // End vendored code
 
-const GovukHeader = () => {
+export default () => {
   const headerRef = useRef();
   useEffect(() => {
     new Header(headerRef.current).init();
@@ -145,5 +145,3 @@ const GovukHeader = () => {
     </header>
   );
 };
-
-export default GovukHeader;

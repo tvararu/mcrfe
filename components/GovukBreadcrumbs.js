@@ -5,7 +5,7 @@ export default ({ crumbs }) => (
     <ol className="govuk-breadcrumbs__list">
       {crumbs.map(({ as, href, text }) => (
         <li
-          key={href}
+          key={text}
           className="govuk-breadcrumbs__list-item"
           {...(href ? {} : { "aria-current": "page" })}
         >

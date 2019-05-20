@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GovukBreadcrumbs renders correctly 1`] = `
+<nav
+  className="govuk-breadcrumbs"
+>
+  <ol
+    className="govuk-breadcrumbs__list"
+  >
+    <li
+      className="govuk-breadcrumbs__list-item"
+    >
+      <a
+        className="govuk-breadcrumbs__link"
+      >
+        Organisations
+      </a>
+    </li>
+    <li
+      aria-current="page"
+      className="govuk-breadcrumbs__list-item"
+    >
+      An organisation name
+    </li>
+  </ol>
+</nav>
+`;

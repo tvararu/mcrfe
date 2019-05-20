@@ -1,4 +1,4 @@
-const PhaseBanner = () => (
+export default () => (
   <div className="govuk-phase-banner">
     <p className="govuk-phase-banner__content">
       <strong className="govuk-tag govuk-phase-banner__content__tag ">
@@ -17,5 +17,3 @@ const PhaseBanner = () => (
     </p>
   </div>
 );
-
-export default PhaseBanner;

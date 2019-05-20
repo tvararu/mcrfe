@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GovukSkipLink renders correctly 1`] = `
+<a
+  className="govuk-skip-link"
+  href="#main-content"
+>
+  Skip to main content
+</a>
+`;

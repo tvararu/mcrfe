@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GovukMain renders correctly 1`] = `
+<main
+  className="govuk-main-wrapper"
+  id="main-content"
+  role="main"
+>
+  Lorem
+</main>
+`;

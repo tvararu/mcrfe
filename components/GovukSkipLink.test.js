@@ -1,9 +1,9 @@
 import renderer from "react-test-renderer";
-import GovukFooter from "./GovukFooter";
+import GovukSkipLink from "./GovukSkipLink";
 
-describe("GovukFooter", () => {
+describe("GovukSkipLink", () => {
   it("renders correctly", () => {
-    const component = renderer.create(<GovukFooter />);
+    const component = renderer.create(<GovukSkipLink />);
     const tree = component.toJSON();
 
     expect(tree).toMatchSnapshot();
