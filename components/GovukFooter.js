@@ -1,4 +1,4 @@
-const Footer = () => (
+export default () => (
   <footer className="govuk-footer" role="contentinfo">
     <div className="govuk-width-container">
       <div className="govuk-grid-row">
@@ -60,5 +60,3 @@ const Footer = () => (
     </div>
   </footer>
 );
-
-export default Footer;
