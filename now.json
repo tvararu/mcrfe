@@ -2,6 +2,9 @@
   "version": 2,
   "name": "mcrfe",
   "regions": ["lhr1"],
+  "github": {
+    "silent": true
+  },
   "builds": [{ "src": "next.config.js", "use": "@now/next" }],
   "build": {
     "env": {
