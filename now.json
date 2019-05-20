@@ -1,6 +1,7 @@
 {
   "version": 2,
   "name": "mcrfe",
+  "regions": ["lhr1"],
   "builds": [{ "src": "next.config.js", "use": "@now/next" }],
   "build": {
     "env": {
