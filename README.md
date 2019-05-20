@@ -15,6 +15,12 @@ Deploy:
 now
 ```
 
+To run cypress end to end tests:
+
+```bash
+yarn run cypress open
+```
+
 Analyze the client-side JS bundle:
 
 ```bash
