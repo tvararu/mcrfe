@@ -1,3 +1,7 @@
+import { addMatchImageSnapshotCommand } from "cypress-image-snapshot/command";
+
+addMatchImageSnapshotCommand();
+
 const auth = {
   username: "local",
   password: "local"

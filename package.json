@@ -25,6 +25,7 @@
     "@zeit/next-bundle-analyzer": "^0.1.2",
     "@zeit/next-sass": "^1.0.1",
     "cypress": "^3.3.0",
+    "cypress-image-snapshot": "^3.0.2",
     "node-sass": "^4.12.0"
   }
 }

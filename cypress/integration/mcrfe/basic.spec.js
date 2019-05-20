@@ -2,31 +2,37 @@ const schoolName = "2Schools Consortium";
 
 describe("Basic tests", () => {
   describe("Fresh visit", () => {
-    it("Organisations page", () => {
+    it("Organisations", () => {
       cy.visit("/");
 
       cy.assertReloadAssert(() => {
         cy.contains("Organisations").should("exist");
         cy.contains(schoolName).should("exist");
       });
+
+      cy.matchImageSnapshot({ capture: "viewport" });
     });
 
-    it("Organisation page", () => {
+    it("Organisation", () => {
       cy.visit("/organisations/T92");
 
       cy.assertReloadAssert(() => {
         cy.contains(schoolName).should("exist");
         cy.contains("Courses").should("exist");
       });
+
+      cy.matchImageSnapshot();
     });
 
-    it("Courses page", () => {
+    it("Courses", () => {
       cy.visit("/organisations/T92/courses");
 
       cy.assertReloadAssert(() => {
         cy.contains("Courses").should("exist");
         cy.contains("Primary (X130)").should("exist");
       });
+
+      cy.matchImageSnapshot();
     });
   });
 
