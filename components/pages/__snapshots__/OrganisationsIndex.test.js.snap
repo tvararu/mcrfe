@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OrganisationsIndex renders correctly 1`] = `
+<main
+  className="govuk-main-wrapper"
+  id="main-content"
+  role="main"
+>
+  <h1
+    className="govuk-heading-xl"
+  >
+    Organisations
+  </h1>
+  <ul
+    className="govuk-list"
+  >
+    <li>
+      <h2
+        className="govuk-heading-m"
+      >
+        <a
+          className="govuk-link"
+        >
+          Acme
+        </a>
+        <span
+          className="govuk-body govuk-!-font-weight-regular govuk-!-display-block"
+        >
+          0
+           
+          courses
+        </span>
+      </h2>
+    </li>
+    <li>
+      <h2
+        className="govuk-heading-m"
+      >
+        <a
+          className="govuk-link"
+        >
+          Bat
+        </a>
+        <span
+          className="govuk-body govuk-!-font-weight-regular govuk-!-display-block"
+        >
+          1
+           
+          course
+        </span>
+      </h2>
+    </li>
+  </ul>
+</main>
+`;

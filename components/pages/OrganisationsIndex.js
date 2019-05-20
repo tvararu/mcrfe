@@ -33,7 +33,7 @@ const OrganisationListItem = ({
         <a className="govuk-link">{name}</a>
       </Link>
       <span className="govuk-body govuk-!-font-weight-regular govuk-!-display-block">
-        {courseCount} course{courseCount !== 1 && "s"}
+        {courseCount} {courseCount !== 1 ? "courses" : "course"}
       </span>
     </h2>
   </li>

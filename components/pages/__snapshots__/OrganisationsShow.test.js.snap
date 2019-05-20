@@ -1,0 +1,169 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OrganisationsShow renders correctly 1`] = `
+Array [
+  <nav
+    className="govuk-breadcrumbs"
+  >
+    <ol
+      className="govuk-breadcrumbs__list"
+    >
+      <li
+        className="govuk-breadcrumbs__list-item"
+      >
+        <a
+          className="govuk-breadcrumbs__link"
+        >
+          Organisations
+        </a>
+      </li>
+      <li
+        aria-current="page"
+        className="govuk-breadcrumbs__list-item"
+      >
+        Acme
+      </li>
+    </ol>
+  </nav>,
+  <main
+    className="govuk-main-wrapper"
+    id="main-content"
+    role="main"
+  >
+    <h1
+      className="govuk-heading-xl"
+    >
+      Acme
+    </h1>
+    <div
+      className="govuk-grid-row"
+    >
+      <div
+        className="govuk-grid-column-two-thirds"
+      >
+        <h2
+          className="govuk-heading-m"
+        >
+          <a
+            className="govuk-link"
+            href="/organisations/details?providerCode=A01"
+          >
+            About your organisation
+          </a>
+        </h2>
+        <p
+          className="govuk-body"
+        >
+          Use this section to:
+        </p>
+        <ul
+          className="govuk-list govuk-list--bullet govuk-!-margin-bottom-8"
+        >
+          <li>
+            write about your organisation
+          </li>
+          <li>
+            set your contact details
+          </li>
+          <li>
+            publish this information on all course pages
+          </li>
+        </ul>
+        <h2
+          className="govuk-heading-m"
+        >
+          <a
+            className="govuk-link"
+            href="/organisations/locations?providerCode=A01"
+          >
+            Locations
+          </a>
+        </h2>
+        <p
+          className="govuk-body"
+        >
+          Use this section to:
+        </p>
+        <ul
+          className="govuk-list govuk-list--bullet govuk-!-margin-bottom-8"
+        >
+          <li>
+            edit location names and addresses
+          </li>
+          <li>
+            add locations
+          </li>
+        </ul>
+        <h2
+          className="govuk-heading-m"
+        >
+          <a
+            className="govuk-link"
+          >
+            Courses
+          </a>
+        </h2>
+        <p
+          className="govuk-body"
+        >
+          Use this section to:
+        </p>
+        <ul
+          className="govuk-list govuk-list--bullet govuk-!-margin-bottom-8"
+        >
+          <li>
+            write about each course
+          </li>
+          <li>
+            preview and publish courses
+          </li>
+          <li>
+            copy content between courses
+          </li>
+        </ul>
+        <h2
+          className="govuk-heading-m"
+        >
+          <a
+            className="govuk-link"
+            href="/organisations/request-access?providerCode=A01"
+          >
+            Request access for someone else
+          </a>
+        </h2>
+        <p
+          className="govuk-body govuk-!-margin-bottom-8"
+        >
+          You can request a DfE Sign-in account for others who manage your courses.
+        </p>
+      </div>
+      <div
+        className="jsx-206754058 govuk-grid-column-one-third"
+      >
+        <div
+          className="jsx-206754058 related"
+        >
+          <h2
+            className="jsx-206754058 govuk-heading-m"
+          >
+            Support and guidance
+          </h2>
+          <p
+            className="jsx-206754058 govuk-body govuk-!-margin-bottom-0"
+          >
+            If you have a question, or you’ve had a problem using Publish, you can
+             
+            <a
+              className="jsx-206754058 govuk-link"
+              href="mailto:becomingateacher@digital.education.gov.uk?subject=Support%20and%20guidance"
+            >
+              email the Becoming a Teacher team
+            </a>
+            .
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>,
+]
+`;

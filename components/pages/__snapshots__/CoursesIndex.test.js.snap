@@ -1,0 +1,406 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CoursesIndex renders correctly 1`] = `
+Array [
+  <nav
+    className="govuk-breadcrumbs"
+  >
+    <ol
+      className="govuk-breadcrumbs__list"
+    >
+      <li
+        className="govuk-breadcrumbs__list-item"
+      >
+        <a
+          className="govuk-breadcrumbs__link"
+        >
+          Organisations
+        </a>
+      </li>
+      <li
+        className="govuk-breadcrumbs__list-item"
+      >
+        <a
+          className="govuk-breadcrumbs__link"
+        >
+          Acme
+        </a>
+      </li>
+    </ol>
+  </nav>,
+  <main
+    className="govuk-main-wrapper"
+    id="main-content"
+    role="main"
+  >
+    <h1
+      className="govuk-heading-xl"
+    >
+      Courses
+    </h1>
+    <p
+      className="govuk-body"
+    >
+      Use this section to:
+    </p>
+    <ul
+      className="govuk-list govuk-list--bullet govuk-!-margin-bottom-7"
+    >
+      <li>
+        write about each course
+      </li>
+      <li>
+        preview and publish courses
+      </li>
+      <li>
+        copy content between courses
+      </li>
+    </ul>
+    <section>
+      <table
+        className="govuk-table"
+      >
+        <thead
+          className="jsx-621630794 govuk-table__head"
+        >
+          <tr
+            className="jsx-621630794 govuk-table__row"
+          >
+            <th
+              className="jsx-621630794 govuk-table__header w-33"
+            >
+              Course
+            </th>
+            <th
+              className="jsx-621630794 govuk-table__header"
+            >
+              UCAS Status
+            </th>
+            <th
+              className="jsx-621630794 govuk-table__header"
+            >
+              Content
+            </th>
+            <th
+              className="jsx-621630794 govuk-table__header"
+            >
+              Is it on 
+              <abbr
+                className="jsx-621630794"
+                title="Find postgraduate teacher training"
+              >
+                Find
+              </abbr>
+              ?
+            </th>
+            <th
+              className="jsx-621630794 govuk-table__header"
+            >
+              Applications
+            </th>
+            <th
+              className="jsx-621630794 govuk-table__header"
+            >
+              Vacancies
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          className="govuk-table__body"
+        >
+          <tr
+            className="govuk-table__row"
+          >
+            <td
+              className="govuk-table__cell"
+            >
+              <a
+                className="govuk-link govuk-heading-s govuk-!-margin-bottom-0"
+              >
+                Primary
+                 (
+                X100
+                )
+              </a>
+              <span
+                className="govuk-body-s"
+              >
+                QTS full time
+              </span>
+            </td>
+            <td
+              className="govuk-table__cell"
+            >
+              Running
+            </td>
+            <td
+              className="govuk-table__cell"
+            >
+              <div
+                className="jsx-268204376 govuk-tag phase-tag--small phase-tag--published"
+              >
+                Published
+              </div>
+            </td>
+            <td
+              className="govuk-table__cell"
+            >
+              <a
+                className="govuk-link"
+                href="https://bat-dev-search-and-compare-ui-app.azurewebsites.net/course/A01/X100"
+              >
+                Yes - view online
+              </a>
+            </td>
+            <td
+              className="govuk-table__cell"
+            >
+              Open
+            </td>
+            <td
+              className="govuk-table__cell"
+            >
+              Yes
+               (
+              <a
+                className="govuk-link"
+                href="/organisations/A01/courses/X100/vacancies"
+              >
+                Edit
+              </a>
+              )
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h2
+        className="govuk-heading-m"
+      >
+        <span
+          className="govuk-caption-m"
+        >
+          Accredited body
+        </span>
+        Acme Accrediting
+      </h2>
+      <table
+        className="govuk-table"
+      >
+        <thead
+          className="jsx-621630794 govuk-table__head"
+        >
+          <tr
+            className="jsx-621630794 govuk-table__row"
+          >
+            <th
+              className="jsx-621630794 govuk-table__header w-33"
+            >
+              Course
+            </th>
+            <th
+              className="jsx-621630794 govuk-table__header"
+            >
+              UCAS Status
+            </th>
+            <th
+              className="jsx-621630794 govuk-table__header"
+            >
+              Content
+            </th>
+            <th
+              className="jsx-621630794 govuk-table__header"
+            >
+              Is it on 
+              <abbr
+                className="jsx-621630794"
+                title="Find postgraduate teacher training"
+              >
+                Find
+              </abbr>
+              ?
+            </th>
+            <th
+              className="jsx-621630794 govuk-table__header"
+            >
+              Applications
+            </th>
+            <th
+              className="jsx-621630794 govuk-table__header"
+            >
+              Vacancies
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          className="govuk-table__body"
+        >
+          <tr
+            className="govuk-table__row"
+          >
+            <td
+              className="govuk-table__cell"
+            >
+              <a
+                className="govuk-link govuk-heading-s govuk-!-margin-bottom-0"
+              >
+                Mathematics
+                 (
+                X101
+                )
+              </a>
+              <span
+                className="govuk-body-s"
+              >
+                QTS full time
+              </span>
+            </td>
+            <td
+              className="govuk-table__cell"
+            >
+              Not running
+            </td>
+            <td
+              className="govuk-table__cell"
+            />
+            <td
+              className="govuk-table__cell"
+            >
+              No
+            </td>
+            <td
+              className="govuk-table__cell"
+            >
+              
+            </td>
+            <td
+              className="govuk-table__cell"
+            >
+              
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h2
+        className="govuk-heading-m"
+      >
+        <span
+          className="govuk-caption-m"
+        >
+          Accredited body
+        </span>
+        Acme Other
+      </h2>
+      <table
+        className="govuk-table"
+      >
+        <thead
+          className="jsx-621630794 govuk-table__head"
+        >
+          <tr
+            className="jsx-621630794 govuk-table__row"
+          >
+            <th
+              className="jsx-621630794 govuk-table__header w-33"
+            >
+              Course
+            </th>
+            <th
+              className="jsx-621630794 govuk-table__header"
+            >
+              UCAS Status
+            </th>
+            <th
+              className="jsx-621630794 govuk-table__header"
+            >
+              Content
+            </th>
+            <th
+              className="jsx-621630794 govuk-table__header"
+            >
+              Is it on 
+              <abbr
+                className="jsx-621630794"
+                title="Find postgraduate teacher training"
+              >
+                Find
+              </abbr>
+              ?
+            </th>
+            <th
+              className="jsx-621630794 govuk-table__header"
+            >
+              Applications
+            </th>
+            <th
+              className="jsx-621630794 govuk-table__header"
+            >
+              Vacancies
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          className="govuk-table__body"
+        >
+          <tr
+            className="govuk-table__row"
+          >
+            <td
+              className="govuk-table__cell"
+            >
+              <a
+                className="govuk-link govuk-heading-s govuk-!-margin-bottom-0"
+              >
+                Physics
+                 (
+                X102
+                )
+              </a>
+              <span
+                className="govuk-body-s"
+              >
+                QTS full time
+              </span>
+            </td>
+            <td
+              className="govuk-table__cell"
+            >
+              New – not yet running
+            </td>
+            <td
+              className="govuk-table__cell"
+            />
+            <td
+              className="govuk-table__cell"
+            >
+              No
+            </td>
+            <td
+              className="govuk-table__cell"
+            >
+              
+            </td>
+            <td
+              className="govuk-table__cell"
+            >
+              
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <a
+      className="govuk-button govuk-!-margin-bottom-2"
+      href="https://docs.google.com/forms/d/e/1FAIpQLSeatJO2ZuqM-fnRJxEo6IIF0hZIU63JGnx0sDXO6Ulax7U_bA/viewform?usp=pp_url&entry.1033530353=tim.abell%2B4%40digital.education.gov.uk&entry.158771972=2C4"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Add a new course
+    </a>
+    <p
+      className="govuk-body-s "
+    >
+      You’ll be taken to a Google Form to fill in your course details.
+    </p>
+  </main>,
+]
+`;
