@@ -31,6 +31,7 @@ Vendor `govuk-frontend` assets (re-run when the version updates):
 
 ```bash
 cp -nrv node_modules/govuk-frontend/assets/ static/govuk-frontend/
+cp -v node_modules/govuk-frontend/all.js static/govuk-frontend/scripts
 git add static && git commit -m "Update vendored govuk-frontend assets"
 ```
 
