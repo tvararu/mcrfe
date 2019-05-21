@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CourseStatusTag renders correctly with draft enrichment 1`] = `
+<div
+  className="jsx-4100856793 govuk-tag tag--small draft"
+>
+  Draft
+</div>
+`;
+
+exports[`CourseStatusTag renders correctly with empty enrichment 1`] = `
+<div
+  className="jsx-4100856793 govuk-tag tag--small empty"
+>
+  Empty
+</div>
+`;
+
+exports[`CourseStatusTag renders correctly with published enrichment 1`] = `
+<div
+  className="jsx-4100856793 govuk-tag tag--small published"
+>
+  Published
+</div>
+`;
+
+exports[`CourseStatusTag renders correctly with published* enrichment 1`] = `
+Array [
+  <div
+    className="jsx-4100856793 govuk-tag tag--small published"
+  >
+    Published *
+  </div>,
+  <div
+    className="jsx-4100856793 govuk-body govuk-body-s govuk-!-margin-bottom-0 govuk-!-margin-top-1"
+  >
+    * Unpublished changes
+  </div>,
+]
+`;

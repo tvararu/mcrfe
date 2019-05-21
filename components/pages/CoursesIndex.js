@@ -3,6 +3,7 @@ import Link from "next/link";
 import Query from "../elements/Query";
 import GovukMain from "../govuk/Main";
 import GovukBreadcrumbs from "../govuk/Breadcrumbs";
+import CourseStatusTag from '../elements/CourseStatusTag'
 
 const allProvidersQuery = gql`
   query allProviders($providerCode: String!) {
@@ -41,78 +42,6 @@ const allProvidersQuery = gql`
     }
   }
 `;
-
-const enrichmentContentStatusCss = enrichment => {
-  if (!enrichment) return "no-content";
-  if (enrichment.status === 1 || enrichment.lastPublishedTimestampUtc)
-    return "published";
-  return "draft";
-};
-
-const enrichmentHasUnpublishedChanges = enrichment => {
-  return (
-    enrichment &&
-    enrichment.status === 0 &&
-    enrichment.lastPublishedTimestampUtc
-  );
-};
-
-const enrichmentContentStatusContent = enrichment => {
-  if (!enrichment) return "Empty";
-  if (enrichment.status === 1) return "Published";
-  if (enrichment.status === 0 && enrichment.lastPublishedTimestampUtc)
-    return <>Published&nbsp;*</>;
-  return "Draft";
-};
-
-const PhaseTag = ({ course, latestEnrichment }) => {
-  const status = "published";
-  const enrichment = latestEnrichment;
-  return (
-    <>
-      <style jsx>{`
-        .phase-tag--small {
-          padding: 4px 8px 1px;
-        }
-
-        .phase-tag--no-content {
-          background: #ffffff;
-          color: #6f777b;
-          border: 2px solid #899094;
-          margin-top: -1px;
-          margin-bottom: -1px;
-        }
-
-        .phase-tag--not-running {
-          background: #dee0e2;
-          color: #0b0c0c;
-          margin-top: -1px;
-          margin-bottom: -1px;
-        }
-
-        .phase-tag--draft {
-          background: #f47738;
-        }
-
-        .phase-tag--published {
-          background: #00823b;
-        }
-      `}</style>
-      <div
-        className={`govuk-tag phase-tag--small phase-tag--${enrichmentContentStatusCss(
-          enrichment
-        )}`}
-      >
-        {enrichmentContentStatusContent(enrichment)}
-      </div>
-      {enrichmentHasUnpublishedChanges(enrichment) && (
-        <div className="govuk-body govuk-body-s govuk-!-margin-bottom-0 govuk-!-margin-top-1">
-          *&nbsp;Unpublished&nbsp;changes
-        </div>
-      )}
-    </>
-  );
-};
 
 const TableHeader = () => (
   <thead className="govuk-table__head">
@@ -192,7 +121,7 @@ const TableRow = ({ providerCode, course, latestEnrichment }) => (
     <td className="govuk-table__cell">{courseUcasStatus(course)}</td>
     <td className="govuk-table__cell">
       {courseIsRunning(course) && (
-        <PhaseTag course={course} latestEnrichment={latestEnrichment} />
+        <CourseStatusTag enrichment={latestEnrichment} />
       )}
     </td>
     <td className="govuk-table__cell">

@@ -137,7 +137,7 @@ Array [
               className="govuk-table__cell"
             >
               <div
-                className="jsx-268204376 govuk-tag phase-tag--small phase-tag--published"
+                className="jsx-4100856793 govuk-tag tag--small published"
               >
                 Published
               </div>
