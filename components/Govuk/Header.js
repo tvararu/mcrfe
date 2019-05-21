@@ -1,20 +1,13 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import Header from "../../lib/vendor/Header";
 
 export default () => {
-  const headerRef = useRef();
-  /* istanbul ignore next */
+  const [open, setOpen] = useState(true);
   useEffect(() => {
-    new Header(headerRef.current).init();
+    setOpen(false);
   }, []);
   return (
-    <header
-      className="govuk-header"
-      role="banner"
-      data-module="header"
-      ref={headerRef}
-    >
+    <header className="govuk-header" role="banner" data-module="header">
       <div className="govuk-header__container govuk-width-container">
         <div className="govuk-header__logo">
           <a
@@ -54,17 +47,24 @@ export default () => {
           <button
             type="button"
             role="button"
-            className="govuk-header__menu-button js-header-toggle"
+            className={`govuk-header__menu-button js-header-toggle${
+              open ? " govuk-header__menu-button--open" : ""
+            }`}
+            onClick={() => setOpen(!open)}
             aria-controls="navigation"
             aria-label="Show or hide Top Level Navigation"
+            aria-expanded={open}
           >
             Menu
           </button>
           <nav>
             <ul
               id="navigation"
-              className="govuk-header__navigation "
+              className={`govuk-header__navigation${
+                open ? " govuk-header__navigation--open" : ""
+              }`}
               aria-label="Top Level Navigation"
+              aria-hidden={!open}
             >
               <li className="govuk-header__navigation-item">
                 <a className="govuk-header__link" href="/signout">
