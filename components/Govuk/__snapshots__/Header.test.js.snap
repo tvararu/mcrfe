@@ -251,7 +251,7 @@ exports[`Header renders correctly 1`] = `
         aria-controls="navigation"
         aria-expanded={true}
         aria-label="Show or hide Top Level Navigation"
-        className="govuk-header__menu-button js-header-toggle govuk-header__menu-button--open"
+        className="govuk-header__menu-button js-header-toggle"
         onClick={[Function]}
         role="button"
         type="button"
@@ -262,7 +262,7 @@ exports[`Header renders correctly 1`] = `
         <ul
           aria-hidden={false}
           aria-label="Top Level Navigation"
-          className="govuk-header__navigation govuk-header__navigation--open"
+          className="govuk-header__navigation"
           id="navigation"
         >
           <li

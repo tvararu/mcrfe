@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 
 export default () => {
+  const isClient = !!process.browser;
   const [open, setOpen] = useState(true);
   useEffect(() => {
     setOpen(false);
@@ -48,7 +49,7 @@ export default () => {
             type="button"
             role="button"
             className={`govuk-header__menu-button js-header-toggle${
-              open ? " govuk-header__menu-button--open" : ""
+              open && isClient ? " govuk-header__menu-button--open" : ""
             }`}
             onClick={() => setOpen(!open)}
             aria-controls="navigation"
@@ -61,7 +62,7 @@ export default () => {
             <ul
               id="navigation"
               className={`govuk-header__navigation${
-                open ? " govuk-header__navigation--open" : ""
+                open && isClient ? " govuk-header__navigation--open" : ""
               }`}
               aria-label="Top Level Navigation"
               aria-hidden={!open}
