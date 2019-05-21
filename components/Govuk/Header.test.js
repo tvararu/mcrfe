@@ -1,6 +1,5 @@
 import renderer from "react-test-renderer";
-import ReactDOM from "react-dom";
-import { act } from "react-dom/test-utils";
+import { render, fireEvent, cleanup } from "react-testing-library";
 import Header from "./Header";
 jest.mock("next/link");
 
@@ -13,26 +12,16 @@ describe("Header", () => {
   });
 
   describe("behaviour", () => {
-    let container;
-
-    beforeEach(() => {
-      container = document.createElement("div");
-      document.body.appendChild(container);
-      act(() => {
-        ReactDOM.render(<Header />, container);
-      });
-    });
+    afterEach(cleanup);
 
     it("renders as closed after being mounted", () => {
+      const { getByText, container } = render(<Header />);
       expect(container.firstChild).toMatchSnapshot();
     });
 
     it("opens on click", () => {
-      act(() => {
-        container
-          .querySelector("button")
-          .dispatchEvent(new MouseEvent("click", { bubbles: true }));
-      });
+      const { getByText, container } = render(<Header />);
+      fireEvent.click(getByText("Menu"));
       expect(container.firstChild).toMatchSnapshot();
     });
   });
