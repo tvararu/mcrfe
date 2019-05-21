@@ -1,6 +1,6 @@
-import { Query } from "react-apollo";
 import gql from "graphql-tag";
 import Link from "next/link";
+import Query from "../elements/Query";
 import GovukMain from "../govuk/Main";
 import GovukBreadcrumbs from "../govuk/Breadcrumbs";
 
@@ -336,12 +336,10 @@ const Content = ({ providerCode, providerName, courses, enrichments }) => {
 
 export default ({ providerCode }) => (
   <Query query={allProvidersQuery} variables={{ providerCode }}>
-    {({ loading, error, data }) => {
-      if (error) return <pre>Error: {JSON.stringify(error, null, 2)}</pre>;
-      if (loading) return <p className="govuk-body">Loading...</p>;
-
+    {({ data }) => {
       const provider = data.allProviders.nodes[0];
       const courses = provider.coursesByProviderId.nodes;
+      const enrichments = data.allCourseEnrichments.nodes;
       return (
         <>
           <GovukBreadcrumbs
@@ -360,7 +358,7 @@ export default ({ providerCode }) => (
               providerName={provider.providerName}
               providerCode={providerCode}
               courses={courses}
-              enrichments={data.allCourseEnrichments.nodes}
+              enrichments={enrichments}
             />
           </GovukMain>
         </>

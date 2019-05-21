@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Query renders correctly with data 1`] = `
+<p>
+  Lorem
+</p>
+`;
+
+exports[`Query renders correctly with error 1`] = `
+<pre>
+  Error: 
+  "Something went wrong"
+</pre>
+`;
+
+exports[`Query renders correctly with loading 1`] = `
+<p
+  className="govuk-body"
+>
+  Loading...
+</p>
+`;

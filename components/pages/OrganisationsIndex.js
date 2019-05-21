@@ -1,5 +1,5 @@
-import { Query } from "react-apollo";
 import gql from "graphql-tag";
+import Query from "../elements/Query";
 import Link from "next/link";
 import GovukMain from "../govuk/Main";
 
@@ -41,19 +41,13 @@ const OrganisationListItem = ({
 
 const OrganisationsList = () => (
   <Query query={allProvidersQuery}>
-    {({ loading, error, data }) => {
-      if (error) return <pre>Error: {JSON.stringify(error, null, 2)}</pre>;
-      if (loading) return <p className="govuk-body">Loading...</p>;
-
-      const providers = data.allProviders.nodes;
-      return (
-        <ul className="govuk-list">
-          {providers.map(provider => (
-            <OrganisationListItem key={provider.id} {...provider} />
-          ))}
-        </ul>
-      );
-    }}
+    {({ data }) => (
+      <ul className="govuk-list">
+        {data.allProviders.nodes.map(provider => (
+          <OrganisationListItem key={provider.id} {...provider} />
+        ))}
+      </ul>
+    )}
   </Query>
 );
 
