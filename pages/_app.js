@@ -1,9 +1,9 @@
 import App, { Container } from "next/app";
 import { ApolloProvider } from "react-apollo";
-import GovukFooter from "../components/GovukFooter";
-import GovukHeader from "../components/GovukHeader";
-import GovukPhaseBanner from "../components/GovukPhaseBanner";
-import GovukSkipLink from "../components/GovukSkipLink";
+import GovukFooter from "../components/Govuk/Footer";
+import GovukHeader from "../components/Govuk/Header";
+import GovukPhaseBanner from "../components/Govuk/PhaseBanner";
+import GovukSkipLink from "../components/Govuk/SkipLink";
 import withApolloClient from "../lib/with-apollo-client";
 import "../lib/govuk-frontend.scss";
 

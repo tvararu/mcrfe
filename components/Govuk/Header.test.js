@@ -1,9 +1,10 @@
 import renderer from "react-test-renderer";
-import GovukFooter from "./GovukFooter";
+import Header from "./Header";
+jest.mock("next/link");
 
-describe("GovukFooter", () => {
+describe("Header", () => {
   it("renders correctly", () => {
-    const component = renderer.create(<GovukFooter />);
+    const component = renderer.create(<Header />);
     const tree = component.toJSON();
 
     expect(tree).toMatchSnapshot();

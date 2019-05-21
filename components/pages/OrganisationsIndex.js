@@ -1,7 +1,7 @@
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
 import Link from "next/link";
-import GovukMain from "../GovukMain";
+import GovukMain from "../Govuk/Main";
 
 const allProvidersQuery = gql`
   {

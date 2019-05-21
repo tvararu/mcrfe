@@ -1,10 +1,9 @@
 import renderer from "react-test-renderer";
-import GovukHeader from "./GovukHeader";
-jest.mock("next/link");
+import PhaseBanner from "./PhaseBanner";
 
-describe("GovukHeader", () => {
+describe("PhaseBanner", () => {
   it("renders correctly", () => {
-    const component = renderer.create(<GovukHeader />);
+    const component = renderer.create(<PhaseBanner />);
     const tree = component.toJSON();
 
     expect(tree).toMatchSnapshot();

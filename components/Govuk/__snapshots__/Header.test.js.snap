@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`GovukHeader renders correctly 1`] = `
+exports[`Header renders correctly 1`] = `
 <header
   className="govuk-header"
   data-module="header"
