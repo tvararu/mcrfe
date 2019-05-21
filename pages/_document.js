@@ -20,7 +20,7 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <html className="govuk-template js-enabled">
+      <html className="govuk-template">
         <Head />
         <body className="govuk-template__body">
           <Main />

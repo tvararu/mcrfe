@@ -8,6 +8,10 @@ import withApolloClient from "../lib/with-apollo-client";
 import "../lib/govuk-frontend.scss";
 
 class MyApp extends App {
+  componentDidMount() {
+    document.body.classList.add("js-enabled");
+  }
+
   render() {
     const { Component, pageProps, apolloClient } = this.props;
     return (
