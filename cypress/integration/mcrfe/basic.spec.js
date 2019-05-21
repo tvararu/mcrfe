@@ -10,7 +10,7 @@ describe("Basic tests", () => {
         cy.contains(schoolName).should("exist");
       });
 
-      cy.matchImageSnapshot({ capture: "viewport" });
+      // cy.matchImageSnapshot({ capture: "viewport" });
     });
 
     it("Organisation", () => {
@@ -21,7 +21,7 @@ describe("Basic tests", () => {
         cy.contains("Courses").should("exist");
       });
 
-      cy.matchImageSnapshot();
+      // cy.matchImageSnapshot();
     });
 
     it("Courses", () => {
@@ -32,7 +32,7 @@ describe("Basic tests", () => {
         cy.contains("Primary (X130)").should("exist");
       });
 
-      cy.matchImageSnapshot();
+      // cy.matchImageSnapshot();
     });
   });
 
