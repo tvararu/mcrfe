@@ -69,7 +69,7 @@ const TableHeader = () => (
 const sortByNameAndCourseCode = (c1, c2) => {
   const c1str = c1.name + c1.courseCode;
   const c2str = c2.name + c2.courseCode;
-  return c1str < c2str ? -1 : c1str > c2str ? 1 : 0;
+  return c1str < c2str ? -1 : 1;
 };
 
 const Table = ({ providerCode, courses, enrichments }) => (

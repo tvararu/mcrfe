@@ -94,7 +94,73 @@ exports[`CourseTableRow renders correctly with not running course 1`] = `
 </tr>
 `;
 
-exports[`CourseTableRow renders correctly with running course 1`] = `
+exports[`CourseTableRow renders correctly with running and closed course 1`] = `
+<tr
+  className="govuk-table__row"
+>
+  <td
+    className="govuk-table__cell"
+  >
+    <a
+      className="govuk-link govuk-heading-s govuk-!-margin-bottom-0"
+    >
+      Primary
+       (
+      X100
+      )
+    </a>
+    <span
+      className="govuk-body-s"
+    >
+      QTS full time
+    </span>
+  </td>
+  <td
+    className="govuk-table__cell"
+  >
+    Running
+  </td>
+  <td
+    className="govuk-table__cell"
+  >
+    <div
+      className="jsx-4100856793 govuk-tag tag--small empty"
+    >
+      Empty
+    </div>
+  </td>
+  <td
+    className="govuk-table__cell"
+  >
+    <a
+      className="govuk-link"
+      href="https://bat-dev-search-and-compare-ui-app.azurewebsites.net/course/A01/X100"
+    >
+      Yes - view online
+    </a>
+  </td>
+  <td
+    className="govuk-table__cell"
+  >
+    Closed
+  </td>
+  <td
+    className="govuk-table__cell"
+  >
+    No
+     (
+    <a
+      className="govuk-link"
+      href="/organisations/A01/courses/X100/vacancies"
+    >
+      Edit
+    </a>
+    )
+  </td>
+</tr>
+`;
+
+exports[`CourseTableRow renders correctly with running and open course 1`] = `
 <tr
   className="govuk-table__row"
 >

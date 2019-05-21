@@ -58,6 +58,28 @@ jest.mock("../elements/Query", () => ({ children }) =>
                       }
                     ]
                   }
+                },
+                ...Array(10)
+                  .fill(null)
+                  .map((_, index) => ({
+                    courseCode: `Y${index + 1}`,
+                    providerByAccreditingProviderId: {
+                      providerName: "Acme Lots"
+                    },
+                    name: "English",
+                    courseSitesByCourseId: {
+                      nodes: []
+                    }
+                  })),
+                {
+                  courseCode: `Y0`,
+                  providerByAccreditingProviderId: {
+                    providerName: "Acme Lots"
+                  },
+                  name: "English",
+                  courseSitesByCourseId: {
+                    nodes: []
+                  }
                 }
               ]
             }

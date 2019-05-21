@@ -56,6 +56,19 @@ Array [
         copy content between courses
       </li>
     </ul>
+    <a
+      className="govuk-button govuk-!-margin-bottom-2"
+      href="https://docs.google.com/forms/d/e/1FAIpQLSeatJO2ZuqM-fnRJxEo6IIF0hZIU63JGnx0sDXO6Ulax7U_bA/viewform?usp=pp_url&entry.1033530353=tim.abell%2B4%40digital.education.gov.uk&entry.158771972=2C4"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Add a new course
+    </a>
+    <p
+      className="govuk-body-s govuk-!-margin-bottom-6 "
+    >
+      You’ll be taken to a Google Form to fill in your course details.
+    </p>
     <section>
       <table
         className="govuk-table"
@@ -246,6 +259,553 @@ Array [
                 Mathematics
                  (
                 X101
+                )
+              </a>
+              <span
+                className="govuk-body-s"
+              >
+                QTS full time
+              </span>
+            </td>
+            <td
+              className="govuk-table__cell"
+            >
+              Not running
+            </td>
+            <td
+              className="govuk-table__cell"
+            />
+            <td
+              className="govuk-table__cell"
+            >
+              No
+            </td>
+            <td
+              className="govuk-table__cell"
+            >
+              
+            </td>
+            <td
+              className="govuk-table__cell"
+            >
+              
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h2
+        className="govuk-heading-m"
+      >
+        <span
+          className="govuk-caption-m"
+        >
+          Accredited body
+        </span>
+        Acme Lots
+      </h2>
+      <table
+        className="govuk-table"
+      >
+        <thead
+          className="jsx-621630794 govuk-table__head"
+        >
+          <tr
+            className="jsx-621630794 govuk-table__row"
+          >
+            <th
+              className="jsx-621630794 govuk-table__header w-33"
+            >
+              Course
+            </th>
+            <th
+              className="jsx-621630794 govuk-table__header"
+            >
+              UCAS Status
+            </th>
+            <th
+              className="jsx-621630794 govuk-table__header"
+            >
+              Content
+            </th>
+            <th
+              className="jsx-621630794 govuk-table__header"
+            >
+              Is it on 
+              <abbr
+                className="jsx-621630794"
+                title="Find postgraduate teacher training"
+              >
+                Find
+              </abbr>
+              ?
+            </th>
+            <th
+              className="jsx-621630794 govuk-table__header"
+            >
+              Applications
+            </th>
+            <th
+              className="jsx-621630794 govuk-table__header"
+            >
+              Vacancies
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          className="govuk-table__body"
+        >
+          <tr
+            className="govuk-table__row"
+          >
+            <td
+              className="govuk-table__cell"
+            >
+              <a
+                className="govuk-link govuk-heading-s govuk-!-margin-bottom-0"
+              >
+                English
+                 (
+                Y0
+                )
+              </a>
+              <span
+                className="govuk-body-s"
+              >
+                QTS full time
+              </span>
+            </td>
+            <td
+              className="govuk-table__cell"
+            >
+              Not running
+            </td>
+            <td
+              className="govuk-table__cell"
+            />
+            <td
+              className="govuk-table__cell"
+            >
+              No
+            </td>
+            <td
+              className="govuk-table__cell"
+            >
+              
+            </td>
+            <td
+              className="govuk-table__cell"
+            >
+              
+            </td>
+          </tr>
+          <tr
+            className="govuk-table__row"
+          >
+            <td
+              className="govuk-table__cell"
+            >
+              <a
+                className="govuk-link govuk-heading-s govuk-!-margin-bottom-0"
+              >
+                English
+                 (
+                Y1
+                )
+              </a>
+              <span
+                className="govuk-body-s"
+              >
+                QTS full time
+              </span>
+            </td>
+            <td
+              className="govuk-table__cell"
+            >
+              Not running
+            </td>
+            <td
+              className="govuk-table__cell"
+            />
+            <td
+              className="govuk-table__cell"
+            >
+              No
+            </td>
+            <td
+              className="govuk-table__cell"
+            >
+              
+            </td>
+            <td
+              className="govuk-table__cell"
+            >
+              
+            </td>
+          </tr>
+          <tr
+            className="govuk-table__row"
+          >
+            <td
+              className="govuk-table__cell"
+            >
+              <a
+                className="govuk-link govuk-heading-s govuk-!-margin-bottom-0"
+              >
+                English
+                 (
+                Y10
+                )
+              </a>
+              <span
+                className="govuk-body-s"
+              >
+                QTS full time
+              </span>
+            </td>
+            <td
+              className="govuk-table__cell"
+            >
+              Not running
+            </td>
+            <td
+              className="govuk-table__cell"
+            />
+            <td
+              className="govuk-table__cell"
+            >
+              No
+            </td>
+            <td
+              className="govuk-table__cell"
+            >
+              
+            </td>
+            <td
+              className="govuk-table__cell"
+            >
+              
+            </td>
+          </tr>
+          <tr
+            className="govuk-table__row"
+          >
+            <td
+              className="govuk-table__cell"
+            >
+              <a
+                className="govuk-link govuk-heading-s govuk-!-margin-bottom-0"
+              >
+                English
+                 (
+                Y2
+                )
+              </a>
+              <span
+                className="govuk-body-s"
+              >
+                QTS full time
+              </span>
+            </td>
+            <td
+              className="govuk-table__cell"
+            >
+              Not running
+            </td>
+            <td
+              className="govuk-table__cell"
+            />
+            <td
+              className="govuk-table__cell"
+            >
+              No
+            </td>
+            <td
+              className="govuk-table__cell"
+            >
+              
+            </td>
+            <td
+              className="govuk-table__cell"
+            >
+              
+            </td>
+          </tr>
+          <tr
+            className="govuk-table__row"
+          >
+            <td
+              className="govuk-table__cell"
+            >
+              <a
+                className="govuk-link govuk-heading-s govuk-!-margin-bottom-0"
+              >
+                English
+                 (
+                Y3
+                )
+              </a>
+              <span
+                className="govuk-body-s"
+              >
+                QTS full time
+              </span>
+            </td>
+            <td
+              className="govuk-table__cell"
+            >
+              Not running
+            </td>
+            <td
+              className="govuk-table__cell"
+            />
+            <td
+              className="govuk-table__cell"
+            >
+              No
+            </td>
+            <td
+              className="govuk-table__cell"
+            >
+              
+            </td>
+            <td
+              className="govuk-table__cell"
+            >
+              
+            </td>
+          </tr>
+          <tr
+            className="govuk-table__row"
+          >
+            <td
+              className="govuk-table__cell"
+            >
+              <a
+                className="govuk-link govuk-heading-s govuk-!-margin-bottom-0"
+              >
+                English
+                 (
+                Y4
+                )
+              </a>
+              <span
+                className="govuk-body-s"
+              >
+                QTS full time
+              </span>
+            </td>
+            <td
+              className="govuk-table__cell"
+            >
+              Not running
+            </td>
+            <td
+              className="govuk-table__cell"
+            />
+            <td
+              className="govuk-table__cell"
+            >
+              No
+            </td>
+            <td
+              className="govuk-table__cell"
+            >
+              
+            </td>
+            <td
+              className="govuk-table__cell"
+            >
+              
+            </td>
+          </tr>
+          <tr
+            className="govuk-table__row"
+          >
+            <td
+              className="govuk-table__cell"
+            >
+              <a
+                className="govuk-link govuk-heading-s govuk-!-margin-bottom-0"
+              >
+                English
+                 (
+                Y5
+                )
+              </a>
+              <span
+                className="govuk-body-s"
+              >
+                QTS full time
+              </span>
+            </td>
+            <td
+              className="govuk-table__cell"
+            >
+              Not running
+            </td>
+            <td
+              className="govuk-table__cell"
+            />
+            <td
+              className="govuk-table__cell"
+            >
+              No
+            </td>
+            <td
+              className="govuk-table__cell"
+            >
+              
+            </td>
+            <td
+              className="govuk-table__cell"
+            >
+              
+            </td>
+          </tr>
+          <tr
+            className="govuk-table__row"
+          >
+            <td
+              className="govuk-table__cell"
+            >
+              <a
+                className="govuk-link govuk-heading-s govuk-!-margin-bottom-0"
+              >
+                English
+                 (
+                Y6
+                )
+              </a>
+              <span
+                className="govuk-body-s"
+              >
+                QTS full time
+              </span>
+            </td>
+            <td
+              className="govuk-table__cell"
+            >
+              Not running
+            </td>
+            <td
+              className="govuk-table__cell"
+            />
+            <td
+              className="govuk-table__cell"
+            >
+              No
+            </td>
+            <td
+              className="govuk-table__cell"
+            >
+              
+            </td>
+            <td
+              className="govuk-table__cell"
+            >
+              
+            </td>
+          </tr>
+          <tr
+            className="govuk-table__row"
+          >
+            <td
+              className="govuk-table__cell"
+            >
+              <a
+                className="govuk-link govuk-heading-s govuk-!-margin-bottom-0"
+              >
+                English
+                 (
+                Y7
+                )
+              </a>
+              <span
+                className="govuk-body-s"
+              >
+                QTS full time
+              </span>
+            </td>
+            <td
+              className="govuk-table__cell"
+            >
+              Not running
+            </td>
+            <td
+              className="govuk-table__cell"
+            />
+            <td
+              className="govuk-table__cell"
+            >
+              No
+            </td>
+            <td
+              className="govuk-table__cell"
+            >
+              
+            </td>
+            <td
+              className="govuk-table__cell"
+            >
+              
+            </td>
+          </tr>
+          <tr
+            className="govuk-table__row"
+          >
+            <td
+              className="govuk-table__cell"
+            >
+              <a
+                className="govuk-link govuk-heading-s govuk-!-margin-bottom-0"
+              >
+                English
+                 (
+                Y8
+                )
+              </a>
+              <span
+                className="govuk-body-s"
+              >
+                QTS full time
+              </span>
+            </td>
+            <td
+              className="govuk-table__cell"
+            >
+              Not running
+            </td>
+            <td
+              className="govuk-table__cell"
+            />
+            <td
+              className="govuk-table__cell"
+            >
+              No
+            </td>
+            <td
+              className="govuk-table__cell"
+            >
+              
+            </td>
+            <td
+              className="govuk-table__cell"
+            >
+              
+            </td>
+          </tr>
+          <tr
+            className="govuk-table__row"
+          >
+            <td
+              className="govuk-table__cell"
+            >
+              <a
+                className="govuk-link govuk-heading-s govuk-!-margin-bottom-0"
+              >
+                English
+                 (
+                Y9
                 )
               </a>
               <span

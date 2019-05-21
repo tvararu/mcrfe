@@ -4,7 +4,7 @@ jest.mock("next/link");
 
 const courses = [
   {
-    _label: "running",
+    _label: "running and open",
     courseCode: "X100",
     providerByAccreditingProviderId: null,
     name: "Primary",
@@ -15,6 +15,22 @@ const courses = [
           status: "R",
           applicationsAcceptedFrom: "2018-10-09",
           vacStatus: "F"
+        }
+      ]
+    }
+  },
+  {
+    _label: "running and closed",
+    courseCode: "X100",
+    providerByAccreditingProviderId: null,
+    name: "Primary",
+    courseSitesByCourseId: {
+      nodes: [
+        {
+          publish: "Y",
+          status: "R",
+          applicationsAcceptedFrom: "2018-10-09",
+          vacStatus: ""
         }
       ]
     }
