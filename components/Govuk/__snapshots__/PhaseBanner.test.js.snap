@@ -1,5 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`PhaseBanner behaviour renders correctly 1`] = `
+<div
+  class="govuk-phase-banner"
+>
+  <p
+    class="govuk-phase-banner__content"
+  >
+    <strong
+      class="govuk-tag govuk-phase-banner__content__tag "
+    >
+      Prototype
+    </strong>
+    <span
+      class="govuk-phase-banner__text"
+    >
+      This is a prototype.
+       
+      <a
+        class="govuk-link"
+        href="javascript:document.cookie=\\"spaMode=false\\";location.reload();"
+      >
+        Switch 
+        off
+         experimental single-page mode.
+      </a>
+    </span>
+  </p>
+</div>
+`;
+
 exports[`PhaseBanner renders correctly 1`] = `
 <div
   className="govuk-phase-banner"
@@ -10,21 +40,21 @@ exports[`PhaseBanner renders correctly 1`] = `
     <strong
       className="govuk-tag govuk-phase-banner__content__tag "
     >
-      BETA
+      Prototype
     </strong>
     <span
       className="govuk-phase-banner__text"
     >
-      This is a new service – your
+      This is a prototype.
        
       <a
         className="govuk-link"
-        href="mailto:becomingateacher@digital.education.gov.uk?subject=Publish%20teacher%20training%20courses%20feedback"
+        href="javascript:document.cookie=\\"spaMode=true\\";location.reload();"
       >
-        feedback
+        Switch 
+        on
+         experimental single-page mode.
       </a>
-       
-      will help us to improve it.
     </span>
   </p>
 </div>

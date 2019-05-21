@@ -11,7 +11,7 @@ describe("Header", () => {
     expect(tree).toMatchSnapshot();
   });
 
-  describe("behaviour", () => {
+  describe("when mounted", () => {
     beforeAll(() => {
       process.browser = true;
     });

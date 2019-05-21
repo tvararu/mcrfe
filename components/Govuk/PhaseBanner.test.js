@@ -1,4 +1,5 @@
 import renderer from "react-test-renderer";
+import { render, fireEvent, cleanup } from "react-testing-library";
 import PhaseBanner from "./PhaseBanner";
 
 describe("PhaseBanner", () => {
@@ -7,5 +8,14 @@ describe("PhaseBanner", () => {
     const tree = component.toJSON();
 
     expect(tree).toMatchSnapshot();
+  });
+
+  describe("behaviour", () => {
+    afterEach(cleanup);
+
+    it("renders correctly", () => {
+      const { container } = render(<PhaseBanner />);
+      expect(container.firstChild).toMatchSnapshot();
+    });
   });
 });
