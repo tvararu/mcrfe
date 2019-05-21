@@ -26,7 +26,8 @@ class MyDocument extends Document {
   static async getInitialProps(ctx) {
     if (!authValid(ctx.req.headers)) return accessDenied(ctx.res);
 
-    const spaMode = ctx.req.headers["cookie"].includes("spaMode=true");
+    const cookie = ctx.req.headers["cookie"];
+    const spaMode = cookie && cookie.includes("spaMode=true");
 
     const initialProps = await Document.getInitialProps(ctx);
     return { ...initialProps, spaMode };
