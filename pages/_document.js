@@ -30,7 +30,7 @@ class NonSpaHead extends Head {
         {this.context._documentProps.head}
         <link
           rel="preload"
-          href="/static/govuk-frontend/scripts/all.js"
+          href="/static/govuk-frontend/scripts/all.min.js"
           as="script"
         />
         {this.getCssLinks()}
@@ -64,7 +64,7 @@ class MyDocument extends Document {
             <NextScript />
           ) : (
             <>
-              <script src="/static/govuk-frontend/scripts/all.js" />
+              <script src="/static/govuk-frontend/scripts/all.min.js" />
               <Script>{govukInit}</Script>
             </>
           )}
