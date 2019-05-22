@@ -22,6 +22,24 @@ const govukInit = () => {
   GOVUKFrontend.initAll();
 };
 
+class NonSpaHead extends Head {
+  render() {
+    return (
+      <head {...this.props}>
+        {this.props.children}
+        {this.context._documentProps.head}
+        <link
+          rel="preload"
+          href="/static/govuk-frontend/scripts/all.js"
+          as="script"
+        />
+        {this.getCssLinks()}
+        {this.context._documentProps.styles || null}
+      </head>
+    );
+  }
+}
+
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
     if (!authValid(ctx.req.headers)) return accessDenied(ctx.res);
@@ -37,7 +55,7 @@ class MyDocument extends Document {
     const { spaMode } = this.props;
     return (
       <html className="govuk-template">
-        <Head />
+        {spaMode ? <Head /> : <NonSpaHead />}
         <body className="govuk-template__body">
           <Script>{addJsEnabled}</Script>
           <Main />
