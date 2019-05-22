@@ -18,8 +18,10 @@ const addJsEnabled = () => {
   document.body.classList.add("js-enabled");
 };
 
-const govukInit = () => {
-  GOVUKFrontend.initAll();
+const govukHeaderInit = () => {
+  window.GOVUKHeader = window.GOVUKFrontend; // Bug in GOVUKFrontend header.js
+  var $header = document.querySelector('[data-module="header"]');
+  new GOVUKHeader($header).init();
 };
 
 class NonSpaHead extends Head {
@@ -30,7 +32,7 @@ class NonSpaHead extends Head {
         {this.context._documentProps.head}
         <link
           rel="preload"
-          href="/static/govuk-frontend/scripts/all.min.js"
+          href="/static/govuk-frontend/scripts/header.min.js"
           as="script"
         />
         {this.getCssLinks()}
@@ -64,8 +66,8 @@ class MyDocument extends Document {
             <NextScript />
           ) : (
             <>
-              <script src="/static/govuk-frontend/scripts/all.min.js" />
-              <Script>{govukInit}</Script>
+              <script src="/static/govuk-frontend/scripts/header.min.js" />
+              <Script>{govukHeaderInit}</Script>
             </>
           )}
         </body>
