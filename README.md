@@ -15,6 +15,12 @@ Deploy:
 now
 ```
 
+To run jest unit tests:
+
+```bash
+yarn test --watch --notify
+```
+
 To run cypress end to end tests:
 
 ```bash

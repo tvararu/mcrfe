@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "now-build": "next build",
-    "test": "jest --notify --coverage"
+    "test": "jest --coverage"
   },
   "author": "theo@vararu.org",
   "license": "MIT",
