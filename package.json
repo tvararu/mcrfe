@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "Manage Courses React Frontend, for prototyping",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next",
     "build": "next build",
-    "start": "next",
+    "start": "next start",
     "now-build": "next build",
     "test": "jest --notify --coverage"
   },
