@@ -1,6 +1,7 @@
 const express = require("express");
 const basicAuth = require("express-basic-auth");
 const cors = require("cors");
+const compression = require("compression");
 const { postgraphile } = require("postgraphile");
 
 const {
@@ -15,6 +16,7 @@ const PG_URL = `${DATABASE_URL}${PG_SSL ? "?ssl=true" : ""}`;
 const app = express();
 
 app.use(cors());
+app.use(compression());
 
 if (AUTH) {
   app.use(
