@@ -1,6 +1,6 @@
 # mcrfe
 
-Run the server (see [`server/README.md`](server/README.md)).
+Run the API (see [`api/README.md`](api/README.md)).
 
 Run the frontend locally (basic auth: `local:local`):
 
