@@ -5,45 +5,35 @@ const common = () => {
     it("Organisations Index", () => {
       cy.visit("/");
 
-      cy.assertReloadAssert(() => {
-        cy.contains("Organisations").should("exist");
-        cy.contains(schoolName).should("exist");
-      });
+      cy.contains("Organisations").should("exist");
+      cy.contains(schoolName).should("exist");
     });
 
     it("Organisations Show", () => {
       cy.visit("/organisations/T92");
 
-      cy.assertReloadAssert(() => {
-        cy.contains(schoolName).should("exist");
-        cy.contains("Courses").should("exist");
-      });
+      cy.contains(schoolName).should("exist");
+      cy.contains("Courses").should("exist");
     });
 
     it("Courses Index", () => {
       cy.visit("/organisations/T92/courses");
 
-      cy.assertReloadAssert(() => {
-        cy.contains("Courses").should("exist");
-        cy.contains("Primary (X130)").should("exist");
-      });
+      cy.contains("Courses").should("exist");
+      cy.contains("Primary (X130)").should("exist");
     });
 
     it("Locations Index", () => {
       cy.visit("/organisations/T92/locations");
 
-      cy.assertReloadAssert(() => {
-        cy.contains("Locations").should("exist");
-        cy.contains("Main Site").should("exist");
-      });
+      cy.contains("Locations").should("exist");
+      cy.contains("Main Site").should("exist");
     });
 
     it("Locations New", () => {
       cy.visit("/organisations/T92/locations/new");
 
-      cy.assertReloadAssert(() => {
-        cy.contains("Add a location").should("exist");
-      });
+      cy.contains("Add a location").should("exist");
     });
   });
 
@@ -53,9 +43,7 @@ const common = () => {
 
       cy.contains(schoolName).click();
 
-      cy.assertReloadAssert(() => {
-        cy.get("h1").should("contain", schoolName);
-      });
+      cy.get("h1").should("contain", schoolName);
     });
 
     it("Organisations Show to Courses Index", () => {
@@ -63,9 +51,7 @@ const common = () => {
 
       cy.contains("Courses").click();
 
-      cy.assertReloadAssert(() => {
-        cy.get("h1").should("contain", "Courses");
-      });
+      cy.get("h1").should("contain", "Courses");
     });
 
     it("Organisations Show to Locations Index", () => {
@@ -73,9 +59,7 @@ const common = () => {
 
       cy.contains("Locations").click();
 
-      cy.assertReloadAssert(() => {
-        cy.get("h1").should("contain", "Locations");
-      });
+      cy.get("h1").should("contain", "Locations");
     });
 
     it("Locations Index to Locations New", () => {
@@ -83,9 +67,7 @@ const common = () => {
 
       cy.contains("Add a location").click();
 
-      cy.assertReloadAssert(() => {
-        cy.get("h1").should("contain", "Add a location");
-      });
+      cy.get("h1").should("contain", "Add a location");
     });
   });
 

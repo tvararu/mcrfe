@@ -10,9 +10,3 @@ const auth = {
 Cypress.Commands.overwrite("visit", (originalFn, url, options) =>
   originalFn(url, { auth, ...options })
 );
-
-Cypress.Commands.add("assertReloadAssert", assertFn => {
-  assertFn();
-  cy.reload();
-  assertFn();
-});
