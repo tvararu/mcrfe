@@ -47,6 +47,224 @@ Array [
     >
       Add a location
     </h1>
+    <div
+      className="govuk-grid-row"
+    >
+      <div
+        className="govuk-grid-column-two-thirds"
+      >
+        <form
+          action="/organisations/A01/locations"
+          method="post"
+        >
+          <div
+            className="govuk-form-group"
+          >
+            <label
+              className="govuk-label"
+              htmlFor="site_location_name"
+            >
+              <h2
+                className="govuk-heading-m"
+              >
+                Name
+              </h2>
+            </label>
+            <input
+              className="govuk-input govuk-!-width-full"
+              id="site_location_name"
+              name="location_name"
+              type="text"
+            />
+          </div>
+          <h2
+            className="govuk-heading-m govuk-!-margin-top-8"
+          >
+            Address
+          </h2>
+          <div
+            className="govuk-form-group"
+          >
+            <label
+              className="govuk-label"
+              htmlFor="site_address1"
+            >
+              Building and street
+              <span
+                className="govuk-visually-hidden"
+              >
+                line 1 of 2
+              </span>
+            </label>
+            <input
+              className="govuk-input govuk-!-width-full"
+              id="site_address1"
+              name="address1"
+              type="text"
+            />
+          </div>
+          <div
+            className="govuk-form-group"
+          >
+            <label
+              className="govuk-label"
+              htmlFor="site_address2"
+            >
+              <span
+                className="govuk-visually-hidden"
+              >
+                line 2 of 2
+              </span>
+            </label>
+            <input
+              className="govuk-input govuk-!-width-full"
+              id="site_address2"
+              name="address2"
+              type="text"
+            />
+          </div>
+          <div
+            className="govuk-form-group"
+          >
+            <label
+              className="govuk-label"
+              htmlFor="site_address3"
+            >
+              Town or city
+            </label>
+            <input
+              className="govuk-input govuk-!-width-full"
+              id="site_address3"
+              name="address3"
+              type="text"
+            />
+          </div>
+          <div
+            className="govuk-form-group"
+          >
+            <label
+              className="govuk-label"
+              htmlFor="site_address4"
+            >
+              County
+            </label>
+            <input
+              className="govuk-input govuk-!-width-full"
+              id="site_address4"
+              name="address4"
+              type="text"
+            />
+          </div>
+          <div
+            className="govuk-form-group"
+          >
+            <label
+              className="govuk-label"
+              htmlFor="site_postcode"
+            >
+              Postcode
+            </label>
+            <input
+              className="govuk-input form-control-small"
+              id="site_postcode"
+              name="postcode"
+              type="text"
+            />
+          </div>
+          <div
+            className="govuk-form-group"
+          >
+            <label
+              className="govuk-label"
+              htmlFor="site_region_code"
+            >
+              Region of UK
+            </label>
+            <select
+              className="govuk-select"
+              id="site_region_code"
+              name="region_code"
+            >
+              <option
+                value="london"
+              >
+                London
+              </option>
+              <option
+                value="south_east"
+              >
+                South East
+              </option>
+              <option
+                value="south_west"
+              >
+                South West
+              </option>
+              <option
+                value="wales"
+              >
+                Wales
+              </option>
+              <option
+                value="west_midlands"
+              >
+                West Midlands
+              </option>
+              <option
+                value="east_midlands"
+              >
+                East Midlands
+              </option>
+              <option
+                value="eastern"
+              >
+                Eastern
+              </option>
+              <option
+                value="north_west"
+              >
+                North West
+              </option>
+              <option
+                value="yorkshire_and_the_humber"
+              >
+                Yorkshire and the Humber
+              </option>
+              <option
+                value="north_east"
+              >
+                North East
+              </option>
+              <option
+                value="scotland"
+              >
+                Scotland
+              </option>
+              <option
+                value="no_region"
+              >
+                No Region
+              </option>
+            </select>
+          </div>
+          <input
+            className="govuk-button"
+            name="commit"
+            type="submit"
+            value="Save"
+          />
+        </form>
+        <p
+          className="govuk-body"
+        >
+          <a
+            className="govuk-link"
+          >
+            Cancel changes
+          </a>
+        </p>
+      </div>
+    </div>
   </main>,
 ]
 `;
