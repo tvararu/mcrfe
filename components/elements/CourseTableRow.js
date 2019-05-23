@@ -39,17 +39,12 @@ const courseHasVacancies = course =>
 export default ({ providerCode, course, latestEnrichment }) => (
   <tr className="govuk-table__row">
     <td className="govuk-table__cell">
-      <Link
-        as={`/organisations/${providerCode}/courses/${course.courseCode}`}
-        href={`/organisations/courses/show?providerCode=${providerCode}&courseCode=${
-          course.courseCode
-        }`}
-        prefetch
+      <a
+        href="#"
+        className="govuk-link govuk-heading-s govuk-!-margin-bottom-0"
       >
-        <a className="govuk-link govuk-heading-s govuk-!-margin-bottom-0">
-          {course.name} ({course.courseCode})
-        </a>
-      </Link>
+        {course.name} ({course.courseCode})
+      </a>
       <span className="govuk-body-s">QTS full time</span>
     </td>
     <td className="govuk-table__cell">{courseUcasStatus(course)}</td>

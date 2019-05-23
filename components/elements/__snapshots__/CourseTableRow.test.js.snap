@@ -9,6 +9,7 @@ exports[`CourseTableRow renders correctly with new course 1`] = `
   >
     <a
       className="govuk-link govuk-heading-s govuk-!-margin-bottom-0"
+      href="#"
     >
       Primary
        (
@@ -56,6 +57,7 @@ exports[`CourseTableRow renders correctly with not running course 1`] = `
   >
     <a
       className="govuk-link govuk-heading-s govuk-!-margin-bottom-0"
+      href="#"
     >
       Primary
        (
@@ -103,6 +105,7 @@ exports[`CourseTableRow renders correctly with running and closed course 1`] = `
   >
     <a
       className="govuk-link govuk-heading-s govuk-!-margin-bottom-0"
+      href="#"
     >
       Primary
        (
@@ -169,6 +172,7 @@ exports[`CourseTableRow renders correctly with running and open course 1`] = `
   >
     <a
       className="govuk-link govuk-heading-s govuk-!-margin-bottom-0"
+      href="#"
     >
       Primary
        (
