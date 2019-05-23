@@ -1,6 +1,6 @@
 const schoolName = "2Schools Consortium";
 
-describe("Basic tests", () => {
+const common = () => {
   describe("Fresh visit", () => {
     it("Organisations", () => {
       cy.visit("/");
@@ -50,5 +50,35 @@ describe("Basic tests", () => {
         cy.get("h1").should("contain", "Courses");
       });
     });
+  });
+};
+
+describe("Basic tests with multi-page application", () => {
+  common();
+});
+
+describe("Basic tests with single-page application", () => {
+  describe("Switching on spaMode", () => {
+    it("should work", () => {
+      cy.visit("/organisations/T92");
+
+      cy.get('[data-qa="spa-switch"]')
+        .should("contain", "Switch on")
+        .click();
+
+      cy.get('[data-qa="spa-switch"]').should("contain", "Switch off");
+    });
+  });
+
+  describe("With spaMode cookie set", () => {
+    beforeEach(() => {
+      cy.setCookie("spaMode", "true");
+    });
+
+    afterEach(() => {
+      cy.get('[data-qa="spa-switch"]').should("contain", "Switch off");
+    });
+
+    common();
   });
 });

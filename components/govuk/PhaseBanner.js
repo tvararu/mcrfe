@@ -18,7 +18,11 @@ export default () => {
         </strong>
         <span className="govuk-phase-banner__text">
           This is a prototype.{" "}
-          <a className="govuk-link" href={spaToggleHref(rendered)}>
+          <a
+            data-qa="spa-switch"
+            className="govuk-link"
+            href={spaToggleHref(rendered)}
+          >
             Switch {rendered ? "off" : "on"} experimental single-page mode.
           </a>
         </span>
