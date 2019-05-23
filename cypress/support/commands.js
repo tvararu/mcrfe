@@ -13,6 +13,6 @@ Cypress.Commands.overwrite("visit", (originalFn, url, options) =>
 
 Cypress.Commands.add("assertReloadAssert", assertFn => {
   assertFn();
-  cy.reload();
-  assertFn();
+  // cy.reload();
+  // assertFn();
 });

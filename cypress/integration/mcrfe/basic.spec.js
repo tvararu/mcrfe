@@ -112,31 +112,44 @@ const common = () => {
 };
 
 describe("Basic tests with multi-page application", () => {
+  it("Logs into DfE Signin", () => {
+    cy.clearCookie("_publish_teacher_training_courses_session");
+
+    cy.visit("/");
+
+    cy.get("#username").type("XXXXXXX");
+    cy.get("#password").type("YYYYYYY");
+
+    cy.contains("Sign in").click();
+
+    cy.url().should("eq", "data:,");
+  });
+
   common();
 });
 
-describe("Basic tests with single-page application", () => {
-  describe("Switching on spaMode", () => {
-    it("should work", () => {
-      cy.visit("/organisations/T92");
-
-      cy.contains("Switch on experimental single-page mode")
-        .should("exist")
-        .click();
-
-      cy.contains("Switch off experimental single-page mode").should("exist");
-    });
-  });
-
-  describe("With spaMode cookie set", () => {
-    beforeEach(() => {
-      cy.setCookie("spaMode", "true");
-    });
-
-    afterEach(() => {
-      cy.contains("Switch off experimental single-page mode").should("exist");
-    });
-
-    common();
-  });
-});
+// describe("Basic tests with single-page application", () => {
+//   describe("Switching on spaMode", () => {
+//     it("should work", () => {
+//       cy.visit("/organisations/T92");
+//
+//       cy.contains("Switch on experimental single-page mode")
+//         .should("exist")
+//         .click();
+//
+//       cy.contains("Switch off experimental single-page mode").should("exist");
+//     });
+//   });
+//
+//   describe("With spaMode cookie set", () => {
+//     beforeEach(() => {
+//       cy.setCookie("spaMode", "true");
+//     });
+//
+//     afterEach(() => {
+//       cy.contains("Switch off experimental single-page mode").should("exist");
+//     });
+//
+//     common();
+//   });
+// });
