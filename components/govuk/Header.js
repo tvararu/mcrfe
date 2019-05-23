@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 
 export default () => {
-  const isClient = !!process.browser;
-  const [open, setOpen] = useState(true);
+  const [isClient, setIsClient] = useState(false);
+  const [open, setOpen] = useState(false);
   useEffect(() => {
-    setOpen(false);
+    setIsClient(true);
   }, []);
   return (
     <header className="govuk-header" role="banner" data-module="header">
@@ -49,12 +49,12 @@ export default () => {
             type="button"
             role="button"
             className={`govuk-header__menu-button js-header-toggle${
-              open && isClient ? " govuk-header__menu-button--open" : ""
+              open ? " govuk-header__menu-button--open" : ""
             }`}
             onClick={() => setOpen(!open)}
             aria-controls="navigation"
             aria-label="Show or hide Top Level Navigation"
-            aria-expanded={open}
+            aria-expanded={isClient ? open : true}
           >
             Menu
           </button>
@@ -62,10 +62,10 @@ export default () => {
             <ul
               id="navigation"
               className={`govuk-header__navigation${
-                open && isClient ? " govuk-header__navigation--open" : ""
+                open ? " govuk-header__navigation--open" : ""
               }`}
               aria-label="Top Level Navigation"
-              aria-hidden={!open}
+              aria-hidden={isClient ? !open : false}
             >
               <li className="govuk-header__navigation-item">
                 <a className="govuk-header__link" href="/signout">
