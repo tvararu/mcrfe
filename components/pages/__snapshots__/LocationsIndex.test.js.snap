@@ -182,7 +182,6 @@ Array [
         </table>
         <a
           className="govuk-button govuk-!-margin-bottom-2"
-          href="#"
         >
           Add a location
         </a>

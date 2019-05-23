@@ -1,6 +1,7 @@
 import renderer from "react-test-renderer";
 import LocationsIndex from "./LocationsIndex";
 
+jest.mock("next/link");
 jest.mock("../elements/Query", () => ({ children }) =>
   children({
     data: {

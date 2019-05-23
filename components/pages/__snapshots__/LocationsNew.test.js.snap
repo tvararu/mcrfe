@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LocationsNew renders correctly 1`] = `
+Array [
+  <nav
+    className="govuk-breadcrumbs"
+  >
+    <ol
+      className="govuk-breadcrumbs__list"
+    >
+      <li
+        className="govuk-breadcrumbs__list-item"
+      >
+        <a
+          className="govuk-breadcrumbs__link"
+        >
+          Organisations
+        </a>
+      </li>
+      <li
+        className="govuk-breadcrumbs__list-item"
+      >
+        <a
+          className="govuk-breadcrumbs__link"
+        >
+          Acme
+        </a>
+      </li>
+      <li
+        className="govuk-breadcrumbs__list-item"
+      >
+        <a
+          className="govuk-breadcrumbs__link"
+        >
+          Locations
+        </a>
+      </li>
+    </ol>
+  </nav>,
+  <main
+    className="govuk-main-wrapper"
+    id="main-content"
+    role="main"
+  >
+    <h1
+      className="govuk-heading-xl"
+    >
+      Add a location
+    </h1>
+  </main>,
+]
+`;

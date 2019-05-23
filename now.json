@@ -21,6 +21,10 @@
     {
       "src": "/organisations/(?<providerCode>[^/]*)/locations",
       "dest": "/organisations/locations?providerCode=$providerCode"
+    },
+    {
+      "src": "/organisations/(?<providerCode>[^/]*)/locations/new",
+      "dest": "/organisations/locations/new?providerCode=$providerCode"
     }
   ]
 }

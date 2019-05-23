@@ -1,4 +1,5 @@
 import gql from "graphql-tag";
+import Link from "next/link";
 import Query from "../elements/Query";
 import GovukMain from "../govuk/Main";
 import GovukBreadcrumbs from "../govuk/Breadcrumbs";
@@ -51,7 +52,7 @@ const LocationsTable = ({ sites }) => (
   </table>
 );
 
-const Content = ({ sites }) => (
+const Content = ({ providerCode, sites }) => (
   <div className="govuk-grid-row">
     <div className="govuk-grid-column-two-thirds">
       <p className="govuk-body">Use this section to:</p>
@@ -83,9 +84,13 @@ const Content = ({ sites }) => (
       </div>
 
       <LocationsTable sites={sites} />
-      <a className="govuk-button govuk-!-margin-bottom-2" href="#">
-        Add a location
-      </a>
+      <Link
+        prefetch
+        as={`/organisations/${providerCode}/locations/new`}
+        href={`/organisations/locations/new?providerCode=${providerCode}`}
+      >
+        <a className="govuk-button govuk-!-margin-bottom-2">Add a location</a>
+      </Link>
     </div>
   </div>
 );
@@ -108,7 +113,10 @@ export default ({ providerCode }) => (
           />
           <GovukMain>
             <h1 className="govuk-heading-xl">Locations</h1>
-            <Content sites={provider.sitesByProviderId.nodes} />
+            <Content
+              providerCode={providerCode}
+              sites={provider.sitesByProviderId.nodes}
+            />
           </GovukMain>
         </>
       );
