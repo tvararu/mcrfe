@@ -55,9 +55,12 @@ class MyDocument extends Document {
 
   render() {
     const { spaMode } = this.props;
+    const HeadComponent = spaMode ? Head : NonSpaHead;
     return (
       <html className="govuk-template">
-        {spaMode ? <Head /> : <NonSpaHead />}
+        <HeadComponent>
+          <link rel="shortcut icon" href="/static/favicon.ico" />
+        </HeadComponent>
         <body className="govuk-template__body">
           <Script>{addJsEnabled}</Script>
           <Main />
