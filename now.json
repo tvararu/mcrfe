@@ -2,7 +2,10 @@
   "version": 2,
   "name": "mcrfe",
   "regions": ["lhr1"],
-  "builds": [{ "src": "next.config.js", "use": "@now/next" }],
+  "builds": [
+    { "src": "next.config.js", "use": "@now/next" },
+    { "src": "server/LocationsCreate.js", "use": "@now/node" }
+  ],
   "build": {
     "env": {
       "AUTH": "@auth",
@@ -20,7 +23,13 @@
     },
     {
       "src": "/organisations/(?<providerCode>[^/]*)/locations",
-      "dest": "/organisations/locations?providerCode=$providerCode"
+      "dest": "/organisations/locations?providerCode=$providerCode",
+      "methods": ["GET"]
+    },
+    {
+      "src": "/organisations/(?<providerCode>[^/]*)/locations",
+      "dest": "server/LocationsCreate.js",
+      "methods": ["POST"]
     },
     {
       "src": "/organisations/(?<providerCode>[^/]*)/locations/new",

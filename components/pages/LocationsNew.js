@@ -37,8 +37,8 @@ const FormGroupInput = ({ children, field, small, select }) => (
     </label>
     {select ? (
       <select className="govuk-select" name={field} id={`site_${field}`}>
-        {select.map(([code, label]) => (
-          <option key={code} value={code}>
+        {select.map(([code, label], value) => (
+          <option key={code} value={value}>
             {label}
           </option>
         ))}
@@ -89,12 +89,7 @@ const Content = ({ providerCode }) => (
           Region of UK
         </FormGroupInput>
 
-        <input
-          type="submit"
-          name="commit"
-          value="Save"
-          className="govuk-button"
-        />
+        <input type="submit" value="Save" className="govuk-button" />
       </form>
       <p className="govuk-body">
         <Link
