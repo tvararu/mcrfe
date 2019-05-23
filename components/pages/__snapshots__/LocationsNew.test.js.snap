@@ -189,62 +189,62 @@ Array [
               name="region_code"
             >
               <option
-                value="london"
+                value={0}
               >
                 London
               </option>
               <option
-                value="south_east"
+                value={1}
               >
                 South East
               </option>
               <option
-                value="south_west"
+                value={2}
               >
                 South West
               </option>
               <option
-                value="wales"
+                value={3}
               >
                 Wales
               </option>
               <option
-                value="west_midlands"
+                value={4}
               >
                 West Midlands
               </option>
               <option
-                value="east_midlands"
+                value={5}
               >
                 East Midlands
               </option>
               <option
-                value="eastern"
+                value={6}
               >
                 Eastern
               </option>
               <option
-                value="north_west"
+                value={7}
               >
                 North West
               </option>
               <option
-                value="yorkshire_and_the_humber"
+                value={8}
               >
                 Yorkshire and the Humber
               </option>
               <option
-                value="north_east"
+                value={9}
               >
                 North East
               </option>
               <option
-                value="scotland"
+                value={10}
               >
                 Scotland
               </option>
               <option
-                value="no_region"
+                value={11}
               >
                 No Region
               </option>
@@ -252,7 +252,6 @@ Array [
           </div>
           <input
             className="govuk-button"
-            name="commit"
             type="submit"
             value="Save"
           />
