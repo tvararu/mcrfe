@@ -74,7 +74,6 @@ Array [
         >
           <a
             className="govuk-link"
-            href="/organisations/locations?providerCode=A01"
           >
             Locations
           </a>

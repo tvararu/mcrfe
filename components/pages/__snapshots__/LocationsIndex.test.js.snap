@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LocationsIndex renders correctly 1`] = `
+Array [
+  <nav
+    className="govuk-breadcrumbs"
+  >
+    <ol
+      className="govuk-breadcrumbs__list"
+    >
+      <li
+        className="govuk-breadcrumbs__list-item"
+      >
+        <a
+          className="govuk-breadcrumbs__link"
+        >
+          Organisations
+        </a>
+      </li>
+      <li
+        className="govuk-breadcrumbs__list-item"
+      >
+        <a
+          className="govuk-breadcrumbs__link"
+        >
+          Acme
+        </a>
+      </li>
+    </ol>
+  </nav>,
+  <main
+    className="govuk-main-wrapper"
+    id="main-content"
+    role="main"
+  >
+    <h1
+      className="govuk-heading-xl"
+    >
+      Locations
+    </h1>
+  </main>,
+]
+`;

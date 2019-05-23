@@ -33,12 +33,13 @@ const Content = ({ providerCode }) => (
       </ul>
 
       <h2 className="govuk-heading-m">
-        <a
-          className="govuk-link"
+        <Link
+          prefetch
+          as={`/organisations/${providerCode}/locations`}
           href={`/organisations/locations?providerCode=${providerCode}`}
         >
-          Locations
-        </a>
+          <a className="govuk-link">Locations</a>
+        </Link>
       </h2>
       <p className="govuk-body">Use this section to:</p>
       <ul className="govuk-list govuk-list--bullet govuk-!-margin-bottom-8">
