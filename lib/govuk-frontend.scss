@@ -24,7 +24,7 @@ $govuk-assets-path: "/static/govuk-frontend/";
 // @import "node_modules/govuk-frontend/components/hint/hint";
 @import "node_modules/govuk-frontend/components/header/header";
 // @import "node_modules/govuk-frontend/components/input/input";
-// @import "node_modules/govuk-frontend/components/inset-text/inset-text";
+@import "node_modules/govuk-frontend/components/inset-text/inset-text";
 // @import "node_modules/govuk-frontend/components/label/label";
 // @import "node_modules/govuk-frontend/components/panel/panel";
 @import "node_modules/govuk-frontend/components/phase-banner/phase-banner";
@@ -35,7 +35,7 @@ $govuk-assets-path: "/static/govuk-frontend/";
 @import "node_modules/govuk-frontend/components/skip-link/skip-link";
 @import "node_modules/govuk-frontend/components/table/table";
 // @import "node_modules/govuk-frontend/components/textarea/textarea";
-// @import "node_modules/govuk-frontend/components/warning-text/warning-text";
+@import "node_modules/govuk-frontend/components/warning-text/warning-text";
 
 @import "node_modules/govuk-frontend/utilities/all";
 @import "node_modules/govuk-frontend/overrides/all";

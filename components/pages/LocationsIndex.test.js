@@ -7,7 +7,26 @@ jest.mock("../elements/Query", () => ({ children }) =>
       allProviders: {
         nodes: [
           {
-            providerName: "Acme"
+            providerName: "Acme",
+            sitesByProviderId: {
+              nodes: [
+                {
+                  locationName: "First Primary School",
+                  code: "W",
+                  id: 1
+                },
+                {
+                  locationName: "Main Site",
+                  code: "M",
+                  id: 2
+                },
+                {
+                  locationName: "Second Primary School",
+                  code: "O",
+                  id: 3
+                }
+              ]
+            }
           }
         ]
       }

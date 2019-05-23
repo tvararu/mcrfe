@@ -38,6 +38,156 @@ Array [
     >
       Locations
     </h1>
+    <div
+      className="govuk-grid-row"
+    >
+      <div
+        className="govuk-grid-column-two-thirds"
+      >
+        <p
+          className="govuk-body"
+        >
+          Use this section to:
+        </p>
+        <ul
+          className="govuk-list govuk-list--bullet govuk-!-margin-bottom-7"
+        >
+          <li>
+            edit location names and addresses
+          </li>
+          <li>
+            add locations
+          </li>
+        </ul>
+        <div
+          className="govuk-inset-text"
+        >
+          <p>
+            By ‘location’ we mean the places that a candidate selects when making an application. They do this by choosing from a list on both the course page in Find and the UCAS application form.
+          </p>
+        </div>
+        <div
+          className="govuk-warning-text"
+        >
+          <span
+            aria-hidden="true"
+            className="govuk-warning-text__icon"
+          >
+            !
+          </span>
+          <strong
+            className="govuk-warning-text__text"
+          >
+            <span
+              className="govuk-warning-text__assistive"
+            >
+              Warning
+            </span>
+            You are limited to 37 locations by UCAS Apply.
+            <br />
+            <span
+              className="govuk-!-font-weight-regular"
+            >
+              Each location has a single character code.
+            </span>
+          </strong>
+        </div>
+        <table
+          className="govuk-table"
+        >
+          <thead
+            className="govuk-table__head"
+          >
+            <tr
+              className="govuk-table__row"
+            >
+              <th
+                className="govuk-table__header"
+                scope="col"
+              >
+                Name
+              </th>
+              <th
+                className="govuk-table__header"
+                scope="col"
+              >
+                UCAS code
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            className="govuk-table__body"
+          >
+            <tr
+              className="govuk-table__row"
+            >
+              <td
+                className="govuk-table__cell"
+                data-qa="provider__location-name"
+              >
+                <a
+                  className="govuk-link govuk-!-font-weight-bold"
+                  href="#"
+                >
+                  First Primary School
+                </a>
+              </td>
+              <td
+                className="govuk-table__cell"
+              >
+                W
+              </td>
+            </tr>
+            <tr
+              className="govuk-table__row"
+            >
+              <td
+                className="govuk-table__cell"
+                data-qa="provider__location-name"
+              >
+                <a
+                  className="govuk-link govuk-!-font-weight-bold"
+                  href="#"
+                >
+                  Main Site
+                </a>
+              </td>
+              <td
+                className="govuk-table__cell"
+              >
+                M
+              </td>
+            </tr>
+            <tr
+              className="govuk-table__row"
+            >
+              <td
+                className="govuk-table__cell"
+                data-qa="provider__location-name"
+              >
+                <a
+                  className="govuk-link govuk-!-font-weight-bold"
+                  href="#"
+                >
+                  Second Primary School
+                </a>
+              </td>
+              <td
+                className="govuk-table__cell"
+              >
+                O
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <a
+          className="govuk-button govuk-!-margin-bottom-2"
+          href="#"
+        >
+          Add a location
+        </a>
+      </div>
+    </div>
   </main>,
 ]
 `;
