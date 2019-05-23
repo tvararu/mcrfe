@@ -51,6 +51,27 @@ const common = () => {
       });
     });
   });
+
+  describe("Progressive enhancement", () => {
+    describe("Header", () => {
+      beforeEach(() => {
+        cy.viewport("iphone-6");
+        cy.visit("/organisations/T92");
+      });
+
+      it.skip("appears open when JS is turned off", () => {
+        throw Error(
+          "Unimplemented, waiting on https://github.com/cypress-io/cypress/issues/1611."
+        );
+      });
+
+      it("appears closed and can be toggled open", () => {
+        cy.contains("Sign out").should("not.be.visible");
+        cy.contains("Menu").click();
+        cy.contains("Sign out").should("be.visible");
+      });
+    });
+  });
 };
 
 describe("Basic tests with multi-page application", () => {
@@ -62,11 +83,11 @@ describe("Basic tests with single-page application", () => {
     it("should work", () => {
       cy.visit("/organisations/T92");
 
-      cy.get('[data-qa="spa-switch"]')
-        .should("contain", "Switch on")
+      cy.contains("Switch on experimental single-page mode")
+        .should("exist")
         .click();
 
-      cy.get('[data-qa="spa-switch"]').should("contain", "Switch off");
+      cy.contains("Switch off experimental single-page mode").should("exist");
     });
   });
 
@@ -76,7 +97,7 @@ describe("Basic tests with single-page application", () => {
     });
 
     afterEach(() => {
-      cy.get('[data-qa="spa-switch"]').should("contain", "Switch off");
+      cy.contains("Switch off experimental single-page mode").should("exist");
     });
 
     common();

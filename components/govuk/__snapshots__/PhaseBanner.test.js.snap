@@ -19,7 +19,6 @@ exports[`PhaseBanner behaviour renders correctly 1`] = `
        
       <a
         class="govuk-link"
-        data-qa="spa-switch"
         href="javascript:document.cookie=\\"spaMode=false\\";location.reload();"
       >
         Switch 
@@ -50,7 +49,6 @@ exports[`PhaseBanner renders correctly 1`] = `
        
       <a
         className="govuk-link"
-        data-qa="spa-switch"
         href="javascript:document.cookie=\\"spaMode=true\\";location.reload();"
       >
         Switch 
