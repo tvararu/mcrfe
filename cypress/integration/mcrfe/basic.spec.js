@@ -2,7 +2,7 @@ const schoolName = "2Schools Consortium";
 
 const common = () => {
   describe("Fresh visit", () => {
-    it("Organisations", () => {
+    it("Organisations Index", () => {
       cy.visit("/");
 
       cy.assertReloadAssert(() => {
@@ -11,7 +11,7 @@ const common = () => {
       });
     });
 
-    it("Organisation", () => {
+    it("Organisations Show", () => {
       cy.visit("/organisations/T92");
 
       cy.assertReloadAssert(() => {
@@ -20,7 +20,7 @@ const common = () => {
       });
     });
 
-    it("Courses", () => {
+    it("Courses Index", () => {
       cy.visit("/organisations/T92/courses");
 
       cy.assertReloadAssert(() => {
@@ -28,10 +28,27 @@ const common = () => {
         cy.contains("Primary (X130)").should("exist");
       });
     });
+
+    it("Locations Index", () => {
+      cy.visit("/organisations/T92/locations");
+
+      cy.assertReloadAssert(() => {
+        cy.contains("Locations").should("exist");
+        cy.contains("Main Site").should("exist");
+      });
+    });
+
+    it("Locations New", () => {
+      cy.visit("/organisations/T92/locations/new");
+
+      cy.assertReloadAssert(() => {
+        cy.contains("Add a location").should("exist");
+      });
+    });
   });
 
   describe("Navigation between pages", () => {
-    it("Organisations to Organisation", () => {
+    it("Organisations Index to Organisations Show", () => {
       cy.visit("/");
 
       cy.contains(schoolName).click();
@@ -41,13 +58,33 @@ const common = () => {
       });
     });
 
-    it("Organisation to Courses", () => {
+    it("Organisations Show to Courses Index", () => {
       cy.visit("/organisations/T92");
 
       cy.contains("Courses").click();
 
       cy.assertReloadAssert(() => {
         cy.get("h1").should("contain", "Courses");
+      });
+    });
+
+    it("Organisations Show to Locations Index", () => {
+      cy.visit("/organisations/T92");
+
+      cy.contains("Locations").click();
+
+      cy.assertReloadAssert(() => {
+        cy.get("h1").should("contain", "Locations");
+      });
+    });
+
+    it("Locations Index to Locations New", () => {
+      cy.visit("/organisations/T92/locations");
+
+      cy.contains("Add a location").click();
+
+      cy.assertReloadAssert(() => {
+        cy.get("h1").should("contain", "Add a location");
       });
     });
   });
