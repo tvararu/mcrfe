@@ -33,6 +33,9 @@ Array [
     id="main-content"
     role="main"
   >
+    <title>
+      Courses - Publish teacher training courses - GOV.UK
+    </title>
     <h1
       className="govuk-heading-xl"
     >

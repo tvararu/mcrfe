@@ -1,3 +1,4 @@
+import Head from "next/head";
 import gql from "graphql-tag";
 import Link from "next/link";
 import Query from "../elements/Query";
@@ -114,6 +115,11 @@ export default ({ providerCode }) => (
             ]}
           />
           <GovukMain>
+            <Head>
+              <title>
+                {providerName} - Publish teacher training courses - GOV.UK
+              </title>
+            </Head>
             <h1 className="govuk-heading-xl">{providerName}</h1>
             <Content providerCode={providerCode} />
           </GovukMain>

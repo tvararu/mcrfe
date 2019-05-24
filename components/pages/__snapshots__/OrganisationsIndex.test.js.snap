@@ -6,6 +6,9 @@ exports[`OrganisationsIndex renders correctly 1`] = `
   id="main-content"
   role="main"
 >
+  <title>
+    Organisations - Publish teacher training courses - GOV.UK
+  </title>
   <h1
     className="govuk-heading-xl"
   >

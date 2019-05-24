@@ -1,3 +1,4 @@
+import Head from "next/head";
 import gql from "graphql-tag";
 import Query from "../elements/Query";
 import Link from "next/link";
@@ -53,6 +54,9 @@ const OrganisationsList = () => (
 
 export default () => (
   <GovukMain>
+    <Head>
+      <title>Organisations - Publish teacher training courses - GOV.UK</title>
+    </Head>
     <h1 className="govuk-heading-xl">Organisations</h1>
     <OrganisationsList />
   </GovukMain>

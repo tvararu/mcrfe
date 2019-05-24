@@ -30,6 +30,10 @@ Array [
     id="main-content"
     role="main"
   >
+    <title>
+      Acme
+       - Publish teacher training courses - GOV.UK
+    </title>
     <h1
       className="govuk-heading-xl"
     >
