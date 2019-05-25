@@ -60,6 +60,7 @@ class MyDocument extends Document {
       <html className="govuk-template">
         <HeadComponent>
           <link rel="shortcut icon" href="/static/favicon.ico" />
+          <meta name="description" content="Prototype, not a real service." />
         </HeadComponent>
         <body className="govuk-template__body">
           <Script>{addJsEnabled}</Script>
