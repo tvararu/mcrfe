@@ -17,6 +17,7 @@ exports[`Query renders correctly with loading 1`] = `
 <p
   className="govuk-body"
 >
-  Loading...
+  Loading
+  
 </p>
 `;

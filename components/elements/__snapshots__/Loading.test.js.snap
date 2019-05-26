@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loading renders correctly 1`] = `
+<p
+  className="govuk-body"
+>
+  Loading
+  
+</p>
+`;
+
+exports[`Loading when mounted renders with 1 dot 1`] = `
+<p
+  class="govuk-body"
+>
+  Loading
+  .
+</p>
+`;
