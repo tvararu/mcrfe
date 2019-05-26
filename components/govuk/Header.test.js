@@ -12,10 +12,6 @@ describe("Header", () => {
   });
 
   describe("when mounted", () => {
-    beforeAll(() => {
-      process.browser = true;
-    });
-
     afterEach(cleanup);
 
     it("renders as closed after being mounted", () => {
