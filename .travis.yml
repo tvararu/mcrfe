@@ -1,8 +1,15 @@
 language: node_js
+env:
+  global:
+    - CC_TEST_REPORTER_ID=8fb417136ffc122904e9973b1792d944850b721351b135ff86c197d27af36ff1
 cache:
   npm: true
   directories:
     - ~/.cache
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
 install:
   - npm ci
 script:
@@ -11,3 +18,5 @@ script:
   - npm test
   - npx wait-on tcp:3000
   - npm run test:e2e
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
