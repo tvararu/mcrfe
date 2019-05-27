@@ -1,5 +1,8 @@
 language: node_js
-cache: yarn
+cache:
+  yarn: true
+  directories:
+    - ~/.cache
 script:
   - printf "API_URL=$API_URL\nAUTH=$AUTH" > .env.build
   - yarn dev &
