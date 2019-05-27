@@ -10,6 +10,7 @@ Install dependencies for frontend and API:
 
 ```bash
 yarn
+cd api && yarn
 ```
 
 Run the API (see also [`api/README.md`](api/README.md)):
