@@ -1,4 +1,4 @@
-# mcrfe [![Build Status](https://travis-ci.org/tvararu/mcrfe.svg?branch=master)](https://travis-ci.org/tvararu/mcrfe)
+# mcrfe [![Build Status](https://travis-ci.org/tvararu/mcrfe.svg?branch=master)](https://travis-ci.org/tvararu/mcrfe) [![Maintainability](https://api.codeclimate.com/v1/badges/ab146cc9b0db611b1147/maintainability)](https://codeclimate.com/github/tvararu/mcrfe/maintainability)
 
 Install correct version of `node` using `nvm`:
 
