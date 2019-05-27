@@ -9,52 +9,52 @@ nvm <.nvmrc
 Install dependencies for frontend and API:
 
 ```bash
-yarn
-cd api && yarn
+npm i
+cd api && npm i
 ```
 
 Run the API (see also [`api/README.md`](api/README.md)):
 
 ```bash
-yarn api
+npm run api
 open http://localhost:4000/graphiql
 ```
 
 Run the frontend locally (basic auth: `local:local`):
 
 ```bash
-yarn dev
+npm run dev
 open http://localhost:3000
 ```
 
 Deploy:
 
 ```bash
-yarn deploy
+npm run deploy
 ```
 
 Run jest unit tests:
 
 ```bash
-yarn test --watch --notify
+npm run test -- --watch --notify
 ```
 
 Run cypress end to end tests:
 
 ```bash
-yarn run cypress open
+npx cypress open
 ```
 
 Analyze the client-side JS bundle:
 
 ```bash
-BUNDLE_ANALYZE=client yarn build
+BUNDLE_ANALYZE=client npm run build
 ```
 
 Vendor `govuk-frontend` assets (re-run when the version updates):
 
 ```bash
-yarn vendor
+npm run vendor
 git add static && git commit -m "Update vendored govuk-frontend assets"
 ```
 
