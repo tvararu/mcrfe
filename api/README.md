@@ -1,9 +1,8 @@
-# manage-courses-gql
+# mcgql
 
 Run the server:
 
 ```bash
-yarn
 yarn start
 open http://localhost:4000/graphiql
 ```

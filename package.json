@@ -2,14 +2,18 @@
   "name": "mcrfe",
   "version": "1.0.0",
   "description": "Manage Courses React Frontend, for prototyping",
-  "private": true,
   "author": "theo@vararu.org",
   "license": "MIT",
   "repository": "https://github.com/tvararu/mcrfe",
   "engines": {
     "node": "8.15.1"
   },
+  "private": true,
+  "workspaces": [
+    "api"
+  ],
   "scripts": {
+    "api": "cd api && yarn start",
     "build": "next build",
     "deploy": "now",
     "dev": "now dev",
