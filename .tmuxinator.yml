@@ -1,0 +1,9 @@
+name: mcrfe
+windows:
+  - dev:
+      layout: even-vertical
+      panes:
+        - yarn api
+        - yarn dev
+        - yarn run cypress open
+        - yarn test --watch --notify

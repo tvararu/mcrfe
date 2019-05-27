@@ -58,6 +58,12 @@ yarn vendor
 git add static && git commit -m "Update vendored govuk-frontend assets"
 ```
 
+Boot entire dev setup using `tmuxinator`:
+
+```bash
+tmuxinator local
+```
+
 ## License
 
 [MIT](LICENSE.txt).
