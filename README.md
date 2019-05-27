@@ -5,14 +5,14 @@ Run the API (see [`api/README.md`](api/README.md)).
 Run the frontend locally (basic auth: `local:local`):
 
 ```bash
-now dev
+yarn dev
 open http://localhost:3000
 ```
 
 Deploy:
 
 ```bash
-now
+yarn deploy
 ```
 
 To run jest unit tests:

@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "Manage Courses React Frontend, for prototyping",
   "scripts": {
-    "dev": "next",
     "build": "next build",
-    "start": "next start",
+    "deploy": "now",
+    "dev": "now dev",
     "now-build": "next build",
+    "start": "next start",
     "test": "jest --coverage",
     "vendor": "./vendor.sh"
   },
@@ -30,6 +31,7 @@
     "cypress-image-snapshot": "^3.0.2",
     "jest": "^24.8.0",
     "node-sass": "^4.12.0",
+    "now": "^15.3.0",
     "prettier": "^1.17.1",
     "react-test-renderer": "^16.8.6",
     "react-testing-library": "^7.0.1",
