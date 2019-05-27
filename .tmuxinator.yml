@@ -3,7 +3,7 @@ windows:
   - dev:
       layout: even-vertical
       panes:
-        - npm run api
-        - npm run dev
-        - npx cypress open
-        - npm run test -- --watch --notify
+        - yarn api
+        - yarn dev
+        - yarn run cypress open
+        - yarn test --watch --notify
