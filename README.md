@@ -45,12 +45,6 @@ Run cypress end to end tests:
 yarn run cypress open
 ```
 
-Analyze the client-side JS bundle:
-
-```bash
-BUNDLE_ANALYZE=client yarn build
-```
-
 Vendor `govuk-frontend` assets (re-run when the version updates):
 
 ```bash
