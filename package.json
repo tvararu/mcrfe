@@ -10,7 +10,7 @@
   },
   "private": true,
   "scripts": {
-    "api": "cd api && npm start",
+    "api": "cd api && yarn start",
     "build": "next build",
     "deploy": "now",
     "dev": "now dev",
