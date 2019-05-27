@@ -9,6 +9,7 @@
     "now-build": "next build",
     "start": "next start",
     "test": "jest --coverage",
+    "test:e2e": "cypress run --spec cypress/integration/mcrfe/**/*",
     "vendor": "./vendor.sh"
   },
   "author": "theo@vararu.org",
@@ -35,6 +36,7 @@
     "prettier": "^1.17.1",
     "react-test-renderer": "^16.8.6",
     "react-testing-library": "^7.0.1",
-    "uglify-js": "^3.5.15"
+    "uglify-js": "^3.5.15",
+    "wait-on": "^3.2.0"
   }
 }

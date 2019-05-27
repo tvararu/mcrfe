@@ -1,2 +1,7 @@
 language: node_js
 cache: yarn
+script:
+  - yarn dev &
+  - yarn test
+  - yarn run wait-on tcp:3000
+  - yarn test:e2e
