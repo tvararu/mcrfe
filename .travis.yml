@@ -1,6 +1,7 @@
 language: node_js
 cache: yarn
 script:
+  - printf "API_URL=$API_URL\nAUTH=$AUTH" > .env.build
   - yarn dev &
   - yarn test
   - yarn run wait-on tcp:3000
