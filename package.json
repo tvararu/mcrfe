@@ -9,16 +9,8 @@
     "node": "8.15.1"
   },
   "private": true,
-  "workspaces": {
-    "api": [
-      "api"
-    ],
-    "nohoist": [
-      "api"
-    ]
-  },
   "scripts": {
-    "api": "cd api && yarn start",
+    "api": "cd api && npm start",
     "build": "next build",
     "deploy": "now",
     "dev": "now dev",

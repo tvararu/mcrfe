@@ -1,6 +1,6 @@
 applications:
   - name: manage-courses-gql
-    command: yarn start
+    command: npm start
     memory: 512M
     buildpacks:
       - nodejs_buildpack

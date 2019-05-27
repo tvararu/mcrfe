@@ -3,7 +3,7 @@
 Run the server:
 
 ```bash
-yarn start
+npm start
 open http://localhost:4000/graphiql
 ```
 

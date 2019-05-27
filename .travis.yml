@@ -1,11 +1,13 @@
 language: node_js
 cache:
-  yarn: true
+  npm: true
   directories:
     - ~/.cache
+install:
+  - npm ci
 script:
   - printf "API_URL=$API_URL\nAUTH=$AUTH" > .env.build
-  - yarn dev &
-  - yarn test
-  - yarn run wait-on tcp:3000
-  - yarn test:e2e
+  - npm run dev &
+  - npm test
+  - npx wait-on tcp:3000
+  - npm run test:e2e
