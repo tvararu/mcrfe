@@ -52,6 +52,12 @@ yarn vendor
 git add static && git commit -m "Update vendored govuk-frontend assets"
 ```
 
+Analyze the bundle:
+
+```bash
+BUNDLE_ANALYZE=true yarn build
+```
+
 Boot entire dev setup using `tmuxinator`:
 
 ```bash
