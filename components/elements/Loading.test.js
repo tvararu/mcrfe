@@ -1,5 +1,5 @@
 import renderer from "react-test-renderer";
-import { render, fireEvent, cleanup, act } from "react-testing-library";
+import { render, fireEvent, cleanup, act } from "@testing-library/react";
 import Loading from "./Loading";
 
 jest.useFakeTimers();
