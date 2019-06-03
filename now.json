@@ -2,6 +2,7 @@
   "version": 2,
   "name": "mcrfe",
   "regions": ["lhr1"],
+  "alias": "mcrfe.vararu.org",
   "builds": [
     { "src": "next.config.js", "use": "@now/next" },
     { "src": "server/LocationsCreate.js", "use": "@now/node" }
