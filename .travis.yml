@@ -12,7 +12,7 @@ before_script:
   - ./cc-test-reporter before-build
 script:
   - printf "API_URL=$API_URL\nAUTH=$AUTH" > .env.build
-  - yarn dev &
+  - yarn dev
   - yarn test
   - yarn run wait-on tcp:3000
   - yarn test:e2e
