@@ -43,6 +43,6 @@
     "react-test-renderer": "^16.8.6",
     "uglify-js": "^3.6.0",
     "wait-on": "^3.3.0",
-    "webpack-bundle-analyzer": "^3.3.2"
+    "webpack-bundle-analyzer": "^3.4.1"
   }
 }
