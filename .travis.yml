@@ -2,6 +2,10 @@ language: node_js
 env:
   global:
     - CC_TEST_REPORTER_ID=8fb417136ffc122904e9973b1792d944850b721351b135ff86c197d27af36ff1
+addons:
+  apt:
+    packages:
+    - libgconf-2-4
 cache:
   yarn: true
   directories:
