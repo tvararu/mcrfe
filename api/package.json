@@ -18,6 +18,6 @@
     "cors": "^2.8.5",
     "express": "^4.17.0",
     "express-basic-auth": "^1.2.0",
-    "postgraphile": "^4.4.1"
+    "postgraphile": "^4.4.2"
   }
 }
