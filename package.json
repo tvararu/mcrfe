@@ -28,7 +28,7 @@
     "next": "^9.0.3",
     "react": "^16.9.0",
     "react-apollo": "^3.0.0",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.9.0"
   },
   "devDependencies": {
     "@testing-library/react": "^8.0.9",
